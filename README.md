@@ -14,7 +14,9 @@ Projeto da disciplina **ESMA002-23 · Inovações para Engenharia** da **UFABC**
 | Arquivo | O que é |
 |---|---|
 | `index.html` | O site inteiro num arquivo só (HTML, CSS e JavaScript). Funciona no PC e no navegador do celular |
-| `api/gerar-pagina.js` | Função de servidor que manda as fotos ao Claude Sonnet. A chave da API fica só na Vercel |
+| `api/gerar-pagina.js` | Manda as fotos ao Claude Sonnet. A chave da API fica só na Vercel |
+| `api/publicar.js`, `api/vitrines.js`, `api/apagar.js` | Gravam e listam as vitrines no Supabase, e tiram do mapa (moderação com senha) |
+| `supabase.sql` | Cria a tabela e a pasta de fotos no Supabase |
 | `vercel.json` | Dá até 60 segundos para a IA responder |
 | `LEIA-ME.md` | Passo a passo para publicar na Vercel |
 | `vitrine-contexto.md` | Playbook do projeto: problema, solução, planos, identidade visual, telas, feira, tecnologia, custos e cronograma |
@@ -39,11 +41,12 @@ Projeto da disciplina **ESMA002-23 · Inovações para Engenharia** da **UFABC**
 | Story e post | Reais, gerados como imagem no navegador |
 | Busca | Real, com interpretação simples de palavras |
 | Mapa | Ilustrado, não geográfico |
-| Vitrines criadas | Ficam só no navegador de quem criou (compartilhamento via Supabase está no cronograma) |
+| Vitrines criadas | Com o Supabase ligado, aparecem para todo mundo no mapa e no telão. Sem ele, ficam só no navegador de quem criou |
 | Áudio, painel Pro e depoimentos | Simulados ou de exemplo, sinalizados na tela |
 | Login e pagamento | Ainda não existem |
 
 ## Versões
+- **v3.1 (15/11/2026):** site no ar em https://vitrine-ufabc-ieng.vercel.app/ (padrão do QR code); vitrines compartilhadas pelo Supabase, telão atualizando a cada 10 s e moderação com senha.
 - **v3 (14/11/2026):** textos e seções alinhados ao resumo final e ao vídeo-pitch: slogan "Seu bairro inteiro numa vitrine", problema com a lista de ofícios, nova seção "Por que funciona", "Como funciona" nos passos do pitch, plano **Destaque no bairro**, faixa "Teste o app Vitrine na feira, em um minuto" e perguntas frequentes revisadas. IA de verdade com o Claude Sonnet pela Vercel.
 - **v2:** nome **Vitrine** (antes Esquina), logo pino-loja turquesa, paleta "Águas turquesa", tema claro como padrão.
 - **v1:** primeira versão do protótipo, com o nome Esquina.

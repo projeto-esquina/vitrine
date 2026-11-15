@@ -556,6 +556,10 @@ footer .wrap{padding-block:22px;display:flex;flex-wrap:wrap;justify-content:spac
 .l-feira-tag{background:#081D1E;color:#fff;border-radius:99px;padding:7px 14px;font-size:13px;font-weight:700}
 .btn-escuro{background:#081D1E;color:#fff}
 .btn-contorno-escuro{background:transparent;color:#081D1E;box-shadow:0 0 0 1.5px rgba(8,29,30,.55) inset}
+.mod-lista{display:grid;gap:8px;margin-top:10px;max-height:320px;overflow:auto}
+.mod-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 10px;border-radius:12px;background:rgba(255,255,255,.06)}
+.mod-item b{display:block;font-size:14px}.mod-item small{color:var(--on-dark-2,#A3C2C2);font-size:12px}
+.mod-item .btn{padding:8px 12px;font-size:13px;color:var(--on-dark);flex:none}
 .l-planos .l-lead{color:var(--violeta-claro);font-size:19px;margin-top:16px;font-weight:600}
 .l-planos .l-lead2{color:var(--on-dark-2);margin-top:8px;max-width:44ch}
 .l-planos .l-ctas{margin-top:28px}
@@ -1224,8 +1228,9 @@ details.l-q p{color:var(--texto-2);padding-bottom:20px;max-width:62ch}
       <div class="telao-lado">
         <div class="contador"><b id="tel-cont">0</b><span>vitrines no mapa do bairro</span></div>
         <div class="telao-cta"><small>Teste em um minuto</small>Fotografe 3 objetos do estande e veja a sua vitrine surgir aqui, ao vivo.</div>
-        <div class="telao-qr"><div class="l-qr" data-qr></div><div><b>Crie a sua agora</b><small>Aponte a câmera do celular para o código.</small><button type="button" class="lk" id="qr-trocar">Trocar o link do código</button></div></div>
+        <div class="telao-qr"><div class="l-qr" data-qr></div><div><b>Crie a sua agora</b><small>Aponte a câmera do celular para o código.</small><button type="button" class="lk" id="qr-trocar">Trocar o link do código</button> <button type="button" class="lk" id="mod-abrir" style="margin-left:12px" hidden>Moderar vitrines</button></div></div>
         <div class="qr-editor" id="qr-editor" hidden><label for="qr-link">Link que o código abre</label><input id="qr-link" type="url" placeholder="https://…"><button type="button" class="btn btn-agua" id="qr-salvar">Salvar link</button></div>
+        <div class="qr-editor" id="mod-painel" hidden><label for="mod-senha">Senha de moderação do grupo</label><input id="mod-senha" type="password" autocomplete="off" placeholder="A mesma da variável MODERACAO_SENHA"><div class="mod-lista" id="mod-lista"></div></div>
         <div class="feed" id="feed"></div>
       </div>
     </div>
@@ -1664,7 +1669,7 @@ $("#btn-publicar").onclick=()=>{
   const v={...rascunho,itens:rascunho.itens.filter(i=>i.nome.trim()&&i.preco>0)};
   if(!v.itens.length)v.itens=[{nome:"Serviço",preco:30}];
   v.criadaEm=Date.now();
-  criadas.push(v);ultimaCaida=v.id;
+  criadas.push(v);ultimaCaida=v.id;publicarNoServidor(v);
   fotos=[];pick=null;rascunho=null;$("#frase").value="";$("#nome").value="";$("#zap").value="";renderFotos();desenharPick();mostrarEtapa(etF);
   qEl.value="";filtro=interpretar("");sel=v.id;
   location.hash="#mapa";
@@ -1682,6 +1687,85 @@ $("#btn-tela").onclick=async()=>{try{const el=$("#v-telao");if(document.fullscre
 
 /* ---------- Toast ---------- */
 let tt;function toast(m){const t=$("#toast");t.textContent=m;t.hidden=false;clearTimeout(tt);tt=setTimeout(()=>t.hidden=true,3600)}
+
+/* ---------- Vitrines compartilhadas (Vercel + Supabase) ----------
+   Hospedado na Vercel com o Supabase configurado, cada vitrine publicada vai para o banco
+   e aparece no mapa e no telão de todo mundo. Sem servidor, tudo segue funcionando só neste navegador. */
+const COM_SERVIDOR=/^https?:$/.test(location.protocol);
+let servidorVitrines=COM_SERVIDOR;
+async function publicarNoServidor(v){
+  if(!servidorVitrines)return;
+  try{
+    const {foto,...dados}=v;
+    const r=await fetch("/api/publicar",{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({vitrine:dados,foto:typeof foto==="string"&&foto.startsWith("data:")?foto:null})});
+    if(r.status===404||r.status===503){servidorVitrines=false;return}
+    if(!r.ok){toast("A vitrine ficou só neste celular por enquanto: o servidor não respondeu.");return}
+    const j=await r.json();
+    v.remota=true;if(j.foto_url)v.foto=j.foto_url;
+    try{const m=JSON.parse(localStorage.getItem("vitrine-minhas")||"{}");m[v.id]=j.token;localStorage.setItem("vitrine-minhas",JSON.stringify(m))}catch(e){}
+  }catch(e){}
+}
+function vitrineRemota(x){
+  const d=x&&x.dados;if(!d||typeof x.id!=="string"||!/^v[a-z0-9]{4,20}$/.test(x.id))return null;
+  const num=(a,min,max,p)=>{a=Number(a);return Number.isFinite(a)?Math.min(max,Math.max(min,a)):p};
+  const txt=(a,max)=>String(a==null?"":a).slice(0,max);
+  const itens=(Array.isArray(d.itens)?d.itens:[]).slice(0,8).map(i=>({nome:txt(i&&i.nome,60),preco:num(i&&i.preco,0,100000,0)})).filter(i=>i.nome&&i.preco>0);
+  if(!itens.length)return null;
+  const foto=typeof x.foto_url==="string"&&/^https:\/\/[^\s'"()\\]+$/.test(x.foto_url)?x.foto_url:null;
+  return {id:x.id,nome:txt(d.nome,60)||"Sem nome",cat:CATS[d.cat]?d.cat:"outros",desc:txt(d.desc,300),regiao:txt(d.regiao,60),itens,
+    x:num(d.x,0,W,500),y:num(d.y,0,H,320),zap:String(d.zap||"").replace(/\D/g,"").slice(0,15),hoje:d.hoje===true,
+    storyTit:d.storyTit?txt(d.storyTit,40):null,storySub:d.storySub?txt(d.storySub,60):null,
+    foto,nota:null,viz:0,exemplo:false,remota:true,criadaEm:Date.parse(x.criada_em)||Date.now()};
+}
+let sincronizando=false;
+async function carregarRemotas(){
+  if(!servidorVitrines||sincronizando||document.hidden)return;
+  sincronizando=true;
+  try{
+    const r=await fetch("/api/vitrines",{cache:"no-store"});
+    if(r.status===404||r.status===503){servidorVitrines=false;return}
+    if(!r.ok)return;
+    const j=await r.json();if(!Array.isArray(j.vitrines))return;
+    $("#mod-abrir").hidden=false;
+    const ids=new Set(j.vitrines.map(x=>x&&x.id));let mudou=false,novo=null;
+    for(let i=criadas.length-1;i>=0;i--){const c=criadas[i];if(c.remota&&!ids.has(c.id)&&Date.now()-c.criadaEm>60000){criadas.splice(i,1);mudou=true}}
+    for(const x of j.vitrines){
+      const ex=criadas.find(c=>c.id===(x&&x.id));if(ex){ex.remota=true;continue}
+      const v=vitrineRemota(x);if(!v)continue;
+      criadas.push(v);mudou=true;if(!novo||v.criadaEm>novo.criadaEm)novo=v;
+    }
+    if(mudou){
+      if(novo&&recente(novo))ultimaCaida=novo.id;
+      renderTudo();renderFeed(novo&&recente(novo)?novo.id:null);renderModeracao();
+      setTimeout(()=>{ultimaCaida=null},1500);
+    }
+  }catch(e){}finally{sincronizando=false}
+}
+function renderModeracao(){
+  const el=$("#mod-lista");if(!el||$("#mod-painel").hidden)return;
+  const lista=criadas.filter(v=>v.remota).sort((a,b)=>b.criadaEm-a.criadaEm);
+  el.innerHTML=lista.length?lista.map(v=>`<div class="mod-item"><span><b>${esc(v.nome)}</b><small>${esc(CATS[v.cat].r)} · ${new Date(v.criadaEm).toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"})}</small></span><button type="button" class="btn btn-fantasma" data-ocultar="${esc(v.id)}">Tirar do mapa</button></div>`).join(""):`<small>Nenhuma vitrine publicada ainda.</small>`;
+}
+$("#mod-abrir").onclick=()=>{const p=$("#mod-painel");p.hidden=!p.hidden;renderModeracao();if(!p.hidden)$("#mod-senha").focus()};
+$("#mod-lista").addEventListener("click",async e=>{
+  const b=e.target.closest("[data-ocultar]");if(!b)return;
+  const senha=$("#mod-senha").value;if(!senha){toast("Digite a senha de moderação primeiro.");$("#mod-senha").focus();return}
+  b.disabled=true;
+  try{
+    const r=await fetch("/api/apagar",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({id:b.dataset.ocultar,senha})});
+    if(r.status===401){toast("Senha de moderação errada.");return}
+    if(!r.ok){toast("Não deu para tirar agora. Tente de novo.");return}
+    const i=criadas.findIndex(c=>c.id===b.dataset.ocultar);if(i>=0)criadas.splice(i,1);
+    if(sel===b.dataset.ocultar)sel=null;
+    renderTudo();renderFeed();renderModeracao();toast("Vitrine tirada do mapa.");
+  }catch(err){toast("Sem conexão com o servidor.")}finally{b.disabled=false}
+});
+if(COM_SERVIDOR){
+  setTimeout(carregarRemotas,400);
+  setInterval(carregarRemotas,10000);
+  document.addEventListener("visibilitychange",()=>{if(!document.hidden)carregarRemotas()});
+}
 
 /* ---------- Rotas ---------- */
 const VIEWS=["inicio","mapa","criar","telao","painel"];
@@ -1932,7 +2016,7 @@ function initV3(){
   }
 
   /* QR code */
-  const QR_PADRAO="https://claude.ai/artifact/5JPnEhQvA12ngnT9NduAbd";
+  const QR_PADRAO="https://vitrine-ufabc-ieng.vercel.app/";
   let linkQR=QR_PADRAO;try{linkQR=localStorage.getItem("esquina-qr-link")||QR_PADRAO}catch(e){}
   function desenharQR(){
     document.querySelectorAll("[data-qr]").forEach(el=>{

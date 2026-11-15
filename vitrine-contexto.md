@@ -9,7 +9,8 @@
 | **Disciplina** | ESMA002-23 · Inovações para Engenharia |
 | **Evento** | Feira EI2026, apresentação em estande, **9 de dezembro (quarta)** |
 | **Fase atual** | Protótipo navegável (PC e navegador do celular) com IA de verdade pelo servidor |
-| **Última atualização** | 14/11/2026 (v3) |
+| **Última atualização** | 15/11/2026 (v3.1) |
+| **Site no ar** | https://vitrine-ufabc-ieng.vercel.app/ |
 | **Fontes** | Resumo final do projeto (PDF "Projeto IENG · Vitrine e Marketplace") + vídeo-pitch final (2 min) + decisões tomadas na construção do protótipo |
 
 O projeto se chamava **Esquina** até a v1. O nome atual é **Vitrine**, e o produto é chamado de "app Vitrine" no pitch, embora funcione no navegador, sem loja de aplicativos. A página de cada comerciante se chama **vitrine**.
@@ -125,6 +126,7 @@ Informal, de bairro e direto: "pra quem mora perto", "Te achei no app Vitrine", 
 ## 7. O protótipo (v3)
 
 Um site que funciona no PC e no navegador do celular, sem app.
+- **Site público (Vercel):** https://vitrine-ufabc-ieng.vercel.app/ (endereço padrão do QR code)
 - **Link no Claude:** https://claude.ai/artifact/5JPnEhQvA12ngnT9NduAbd (privado: só abre para quem recebeu acesso)
 - **Pacote para hospedar com IA de verdade:** `vitrine-site.zip` (seção 9)
 
@@ -159,7 +161,7 @@ Um site que funciona no PC e no navegador do celular, sem app.
 |---|---|
 | **Criar minha vitrine** (`#criar`) | Até 3 fotos (câmera ou galeria), frase ou áudio (simulado), nome, WhatsApp e área de atendimento no mapa. Geração animada com cronômetro. Resultado: vitrine, story, post e ajustes; quadro **"Lido na foto"**; cada preço marcado como "lido na foto", "da sua frase" ou "estimado · confira"; selo "Lido pelo Claude Sonnet" ou "Modo demonstração" |
 | **Mapa do bairro** (`#mapa`) | Busca ("eletricista hoje", "presente até R$ 50"), resultados por distância com nota, vizinhos que avaliaram e "atende hoje"; vitrine completa; WhatsApp; avaliação com estrelas |
-| **Telão** (`#telao`) | Mapa para projetor, contador "vitrines no mapa do bairro", QR code com link editável, últimas vitrines, tela cheia |
+| **Telão** (`#telao`) | Mapa para projetor, contador "vitrines no mapa do bairro", QR code com link editável, últimas vitrines, tela cheia e **Moderar vitrines** (com senha do grupo, tira uma vitrine do mapa) |
 | **Painel Pro** (`#painel`) | Dados de exemplo do Zé Elétrica: visitas na vitrine, cliques no WhatsApp, posts gerados |
 
 ### 7.4 O que é real e o que é simulado
@@ -170,7 +172,7 @@ Um site que funciona no PC e no navegador do celular, sem app.
 | Story e post | **Reais**, gerados como imagem no navegador |
 | Busca | **Real**, com interpretação simples de palavras |
 | Mapa | Ilustrado, não geográfico |
-| Vitrines criadas | Ficam só no navegador de quem criou. O compartilhamento entre celulares (Supabase) está no cronograma |
+| Vitrines criadas | Com o Supabase ligado, vão para o banco e aparecem no mapa e no telão de todo mundo em até 10 s. Sem ele, ficam só no navegador de quem criou |
 | Áudio, painel Pro, depoimentos | Simulados ou de exemplo, sinalizados na tela |
 | Login e pagamento | Fora do protótipo |
 
@@ -203,12 +205,18 @@ Decisão de 11/11: **não reescrever em Next.js.** O protótipo (`index.html`) c
 ```
 vitrine-site/
 ├── index.html            ← o site
-├── api/gerar-pagina.js   ← servidor que manda as fotos ao Claude Sonnet (guarda a chave)
 ├── vercel.json           ← dá até 60 s para a IA responder
-└── LEIA-ME.md            ← passo a passo de publicação
+├── supabase.sql          ← cria a tabela e a pasta de fotos no Supabase
+├── LEIA-ME.md            ← passo a passo de publicação
+└── api/
+    ├── gerar-pagina.js   ← manda as fotos ao Claude Sonnet (guarda a chave)
+    ├── publicar.js       ← grava a vitrine no Supabase
+    ├── vitrines.js       ← lista as vitrines para o mapa e o telão (atualiza a cada 10 s)
+    ├── apagar.js         ← moderação do grupo, com senha
+    └── _supabase.js      ← peças comuns
 ```
 
-Serviços: **GitHub** (código) → **Vercel Hobby** (site + funções, grátis) → **Anthropic** (Claude Sonnet). Depois, **Supabase** (grátis) para as vitrines aparecerem em todos os celulares e no telão.
+Serviços: **GitHub** (código) → **Vercel Hobby** (site + funções, grátis) → **Anthropic** (Claude Sonnet) → **Supabase** (grátis, banco e fotos, para as vitrines aparecerem em todos os celulares e no telão). Só o servidor da Vercel acessa o banco; o navegador nunca vê as chaves. Variáveis: `ANTHROPIC_API_KEY`, `SUPABASE_URL`, `SUPABASE_SECRET_KEY`, `MODERACAO_SENHA`.
 
 ### 9.2 IA: um modelo multimodal
 O **Claude Sonnet 5.5** (`claude-sonnet-5-5`) lê o texto da foto (OCR) e entende a imagem **na mesma chamada**, e devolve um JSON:
@@ -272,11 +280,11 @@ Em andamento com comerciantes do entorno da UFABC. Pedir **fotos reais** (cardá
 
 ## 12. Pendências
 
-- [ ] Hospedar o `vitrine-site` na Vercel e trocar o link do QR do telão.
+- [x] Hospedar o `vitrine-site` na Vercel (15/11) e deixar o QR apontando para ele.
+- [ ] Ligar o Supabase (SQL + três variáveis na Vercel) e testar com dois celulares.
 - [ ] Testar a IA com as fotos das entrevistas e ajustar as instruções.
 - [ ] Trocar os depoimentos fictícios por falas reais (com autorização).
 - [ ] Definir os preços do Pro e do Destaque (hoje R$ 29 e R$ 15 são exemplos).
-- [ ] Vitrines compartilhadas entre celulares (Supabase).
 - [ ] Definir o recorte do mapa da demo em volta do campus de Santo André.
 - [ ] Revisar os números da seção 2.4 perto da feira.
 - [ ] Dividir as tarefas do cronograma entre o grupo.
