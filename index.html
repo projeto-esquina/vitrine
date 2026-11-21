@@ -843,7 +843,7 @@ details.l-q p{color:var(--texto-2);padding-bottom:20px;max-width:62ch}
     <div class="l-wrap">
       <div class="l-hero-texto">
         <div class="eyebrow">UFABC · Feira EI2026 · Protótipo</div>
-        <h1>Seu bairro inteiro <em>numa vitrine.</em></h1>
+        <h1>O comércio local nunca teve <em>tanta visibilidade.</em></h1>
         <p class="l-sub">A IA que transforma uma foto em vitrine e marketing prontos, e o mapa que liga quem vende a quem mora perto.</p>
         <div class="l-ctas">
           <a href="#criar" class="btn btn-branco">Criar minha vitrine <span class="seta">→</span></a>
@@ -1068,7 +1068,7 @@ details.l-q p{color:var(--texto-2);padding-bottom:20px;max-width:62ch}
   <!-- Rodapé -->
   <footer class="l-rodape"><div class="l-wrap">
     <div class="l-rodape-top">
-      <div><span class="logo" data-logo></span><p class="marca">Seu bairro inteiro numa vitrine.</p></div>
+      <div><span class="logo" data-logo></span><p class="marca">O comércio local nunca teve tanta visibilidade.</p></div>
       <div><h4>Navegação</h4><ul><li><button class="lk" data-ir="como-funciona">Como funciona</button></li><li><button class="lk" data-ir="por-que">Por que funciona</button></li><li><button class="lk" data-ir="planos">Planos</button></li><li><button class="lk" data-ir="feira">Na feira</button></li><li><button class="lk" data-ir="duvidas">Perguntas frequentes</button></li></ul></div>
       <div><h4>Produto</h4><ul><li><a href="#mapa">Mapa do bairro</a></li><li><a href="#criar">Criar minha vitrine</a></li><li><a href="#telao">Telão da feira</a></li><li><a href="#painel">Painel Pro (exemplo)</a></li></ul></div>
     </div>
@@ -1220,7 +1220,7 @@ details.l-q p{color:var(--texto-2);padding-bottom:20px;max-width:62ch}
 <section class="view v-telao" id="v-telao" hidden>
   <div class="wrap">
     <div class="telao-topo">
-      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap"><span class="logo" role="img" aria-label="Vitrine"><svg viewBox="-16 -37 32 38" aria-hidden="true"><path class="pin-logo" d="M0 0L-10.61 -10.61A15 15 0 1 1 10.61 -10.61Z"/><path class="loja" d="M-7.5 -28.7h15v3.75h-15zM-7.5 -24.95a1.875 1.875 0 0 0 3.75 0zM-3.75 -24.95a1.875 1.875 0 0 0 3.75 0zM0 -24.95a1.875 1.875 0 0 0 3.75 0zM3.75 -24.95a1.875 1.875 0 0 0 3.75 0zM-6.15 -22.25h12.3v7.2h-4.5v-3.15a1.65 1.65 0 0 0 -3.3 0v3.15h-4.5z"/></svg><span>vitrine</span></span><p>Seu bairro inteiro numa vitrine · <span class="vivo">ao vivo no estande</span></p></div>
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap"><span class="logo" role="img" aria-label="Vitrine"><svg viewBox="-16 -37 32 38" aria-hidden="true"><path class="pin-logo" d="M0 0L-10.61 -10.61A15 15 0 1 1 10.61 -10.61Z"/><path class="loja" d="M-7.5 -28.7h15v3.75h-15zM-7.5 -24.95a1.875 1.875 0 0 0 3.75 0zM-3.75 -24.95a1.875 1.875 0 0 0 3.75 0zM0 -24.95a1.875 1.875 0 0 0 3.75 0zM3.75 -24.95a1.875 1.875 0 0 0 3.75 0zM-6.15 -22.25h12.3v7.2h-4.5v-3.15a1.65 1.65 0 0 0 -3.3 0v3.15h-4.5z"/></svg><span>vitrine</span></span><p>O comércio local nunca teve tanta visibilidade · <span class="vivo">ao vivo no estande</span></p></div>
       <button class="btn btn-fantasma" id="btn-tela" style="color:var(--on-dark)">Tela cheia</button>
     </div>
     <div class="telao-grid">
@@ -1840,7 +1840,7 @@ function initLanding(){
 
   /* compartilhar */
   $("#l-compartilhar").addEventListener("click",async()=>{
-    const txt="Conhece o app Vitrine? Seu bairro inteiro numa vitrine.";
+    const txt="Conhece o app Vitrine? O comércio local nunca teve tanta visibilidade.";
     try{await navigator.clipboard.writeText(txt);toast("Convite copiado. É só colar no grupo do bairro.")}
     catch(e){toast("Não deu para copiar aqui. Mande: “"+txt+"”")}
   });

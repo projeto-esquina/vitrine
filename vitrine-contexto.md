@@ -1,6 +1,6 @@
 # Vitrine · Playbook do Projeto
 
-> **"Seu bairro inteiro numa vitrine."**
+> **"O comércio local nunca teve tanta visibilidade."**
 > A IA que transforma uma foto em vitrine e marketing prontos, e o mapa que liga quem vende a quem mora perto.
 
 | | |
@@ -9,7 +9,7 @@
 | **Disciplina** | ESMA002-23 · Inovações para Engenharia |
 | **Evento** | Feira EI2026, apresentação em estande, **9 de dezembro (quarta)** |
 | **Fase atual** | Protótipo navegável (PC e navegador do celular) com IA de verdade pelo servidor |
-| **Última atualização** | 15/11/2026 (v3.1) |
+| **Última atualização** | 17/11/2026 (v3.2) |
 | **Site no ar** | https://vitrine-ufabc-ieng.vercel.app/ |
 | **Fontes** | Resumo final do projeto (PDF "Projeto IENG · Vitrine e Marketplace") + vídeo-pitch final (2 min) + decisões tomadas na construção do protótipo |
 
@@ -139,7 +139,7 @@ Um site que funciona no PC e no navegador do celular, sem app.
 
 | # | Seção | Conteúdo |
 |---|---|---|
-| 1 | **Abertura** | Ilustração (dia ou noite) com a lojinha "Bolos da Tê" e pinos caindo. "Seu bairro inteiro **numa vitrine.**" + "A IA que transforma uma foto em vitrine e marketing prontos, e o mapa que liga quem vende a quem mora perto." Botões "Criar minha vitrine" e "Ver o mapa do bairro", card "Zé Elétrica está a 350 m", contador de vitrines e "Role para ver como funciona" |
+| 1 | **Abertura** | Ilustração (dia ou noite) com a lojinha "Bolos da Tê" e pinos caindo. "O comércio local nunca teve **tanta visibilidade.**" + "A IA que transforma uma foto em vitrine e marketing prontos, e o mapa que liga quem vende a quem mora perto." Botões "Criar minha vitrine" e "Ver o mapa do bairro", card "Zé Elétrica está a 350 m", contador de vitrines e "Role para ver como funciona" |
 | 2 | **Problema** | Dois cards: "Quem vende no bairro vive do boca a boca" (lista de ofícios, "O marketing de hoje: papel no poste" e os bilhetes) e "Quem mora não sabe o que existe perto de casa" (grupo de vizinhos e "Enquanto isso: o Zé mora a 350 m") |
 | 3 | **Números** | Os quatro dados da seção 2.4, com fonte |
 | 4 | **Faixa** | "Quem vende não aparece. Quem procura não encontra." + "O app Vitrine junta os dois lados do bairro." |

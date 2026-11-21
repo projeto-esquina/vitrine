@@ -1,6 +1,6 @@
 # Vitrine · Protótipo
 
-> **Seu bairro inteiro numa vitrine.**
+> **O comércio local nunca teve tanta visibilidade.**
 > A IA que transforma uma foto em vitrine e marketing prontos, e o mapa que liga quem vende a quem mora perto.
 
 O comerciante ou autônomo fotografa o que vende (ou manda um áudio), a IA cria a vitrine dele com catálogo, preços, post e story, e a vitrine aparece no mapa do bairro. O morador busca "eletricista hoje", vê as avaliações de vizinhos e chama direto no WhatsApp.
@@ -46,6 +46,7 @@ Projeto da disciplina **ESMA002-23 · Inovações para Engenharia** da **UFABC**
 | Login e pagamento | Ainda não existem |
 
 ## Versões
+- **v3.2 (17/11/2026):** novo slogan "O comércio local nunca teve tanta visibilidade" (antes "Seu bairro inteiro numa vitrine").
 - **v3.1 (15/11/2026):** site no ar em https://vitrine-ufabc-ieng.vercel.app/ (padrão do QR code); vitrines compartilhadas pelo Supabase, telão atualizando a cada 10 s e moderação com senha.
 - **v3 (14/11/2026):** textos e seções alinhados ao resumo final e ao vídeo-pitch: slogan "Seu bairro inteiro numa vitrine", problema com a lista de ofícios, nova seção "Por que funciona", "Como funciona" nos passos do pitch, plano **Destaque no bairro**, faixa "Teste o app Vitrine na feira, em um minuto" e perguntas frequentes revisadas. IA de verdade com o Claude Sonnet pela Vercel.
 - **v2:** nome **Vitrine** (antes Esquina), logo pino-loja turquesa, paleta "Águas turquesa", tema claro como padrão.
