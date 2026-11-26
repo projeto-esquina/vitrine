@@ -15,8 +15,17 @@ create index if not exists vitrines_recentes on public.vitrines (criada_em desc)
 -- 2. Ninguém lê nem grava direto pelo navegador.
 --    Só o servidor da Vercel, com a chave secreta, acessa a tabela.
 alter table public.vitrines enable row level security;
+-- Garante que o servidor (chave secreta) consegue ler e gravar, mesmo nos projetos novos
+-- em que o Supabase não libera tabelas novas automaticamente.
+grant select, insert, update on public.vitrines to service_role;
 
 -- 3. Pasta pública para as fotos de capa (até 2 MB, só imagens)
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
 values ('fotos', 'fotos', true, 2097152, array['image/jpeg', 'image/png', 'image/webp'])
 on conflict (id) do nothing;
+
+-- 4. Login com Google: cada vitrine pode ter um dono (quem estava logado ao publicar).
+--    Pode rodar só este bloco se o resto já foi rodado antes.
+alter table public.vitrines add column if not exists dono_id uuid references auth.users(id) on delete set null;
+create index if not exists vitrines_dono on public.vitrines (dono_id);
+grant select, insert, update on public.vitrines to service_role;

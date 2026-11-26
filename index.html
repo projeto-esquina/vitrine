@@ -556,6 +556,39 @@ footer .wrap{padding-block:22px;display:flex;flex-wrap:wrap;justify-content:spac
 .l-feira-tag{background:#081D1E;color:#fff;border-radius:99px;padding:7px 14px;font-size:13px;font-weight:700}
 .btn-escuro{background:#081D1E;color:#fff}
 .btn-contorno-escuro{background:transparent;color:#081D1E;box-shadow:0 0 0 1.5px rgba(8,29,30,.55) inset}
+.btn-entrar{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:99px;border:1px solid var(--top-btn-borda);background:var(--top-btn-bg);color:var(--top-txt);font:inherit;font-weight:700;font-size:14px;cursor:pointer;flex:none}
+.btn-entrar:hover{border-color:var(--violeta)}
+.conta-btn{width:38px;height:38px;border-radius:50%;border:0;background:var(--violeta);color:#081D1E;font-weight:800;font-size:14px;cursor:pointer;flex:none}
+@media (max-width:480px){ .top-dir .proto{display:none} .btn-entrar{padding:0 10px} }
+.conta-aviso{flex-basis:100%;margin:4px 0 0;font-size:14px;color:var(--texto-2)}
+.conta-aviso .link-btn{display:inline-flex;align-items:center;gap:6px;vertical-align:middle}
+.conta-cab{display:flex;align-items:center;gap:12px;margin-top:10px}
+.conta-cab b{display:block}.conta-cab small{color:var(--texto-2)}
+.conta-av{width:44px;height:44px;border-radius:50%;background:var(--violeta);color:#081D1E;display:grid;place-items:center;font-weight:800;flex:none}
+.minhas{display:grid;gap:8px;margin-top:10px}
+.minha{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border:1px solid var(--linha);border-radius:14px;background:var(--sup)}
+.minha b{display:block}.minha small{color:var(--texto-2);font-size:13px}
+.minha-acoes{display:flex;gap:6px}.minha-acoes .btn{padding:8px 12px;font-size:13px}
+.vit-acoes{display:flex;flex-wrap:wrap;gap:8px}
+.vit-acoes .btn{flex:1 1 200px;justify-content:center}
+.btn-agenda{background:var(--sup);color:var(--texto);box-shadow:inset 0 0 0 1.5px var(--linha);gap:8px}
+.btn-agenda:hover{box-shadow:inset 0 0 0 1.5px var(--violeta)}
+.btn-agenda svg{color:var(--violeta-txt);flex:none}
+.wa.ag .wa-corpo{min-height:240px;max-height:min(46vh,380px);overflow:auto}
+.ag-resp{padding:12px;border-top:1px solid rgba(0,0,0,.08);background:var(--sup)}
+.ag-resp:empty{display:none}
+.ag-ops{display:flex;flex-wrap:wrap;gap:8px}
+.ag-op{min-height:40px;padding:8px 14px;border-radius:99px;border:1.5px solid var(--violeta);background:var(--sup);color:var(--texto);font:inherit;font-size:14px;font-weight:600;cursor:pointer;text-align:left}
+.ag-op:hover,.ag-op:focus-visible{background:rgba(8,189,184,.14)}
+.ag-form{display:flex;gap:8px}
+.ag-form input{flex:1;min-width:0;min-height:44px;border-radius:12px;border:1.5px solid var(--linha);background:var(--bg);color:var(--texto);padding:0 12px;font:inherit}
+.ag-resp>.btn{width:100%;justify-content:center}
+.sim-aviso{align-self:stretch;margin:6px 0;padding:10px 12px;border-radius:12px;background:#FFF6DC;color:#4A3500;border:1px dashed #C99A2E;font-size:14px;line-height:1.45}
+.sim-aviso b{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.sim-msg{display:block;margin-top:8px;padding:8px 10px;border-radius:10px;background:#DCF8C6;color:#0D3433;white-space:pre-line}
+.ag-resumo{display:block;margin-top:6px;padding:8px 10px;border-radius:10px;background:rgba(8,189,184,.12);font-size:14px;line-height:1.5}
+.perg-ed{display:grid;gap:8px}
+.perg-ed input{min-height:42px;border-radius:12px;border:1.5px solid var(--linha);background:var(--sup);color:var(--texto);padding:0 12px;font:inherit}
 .mod-lista{display:grid;gap:8px;margin-top:10px;max-height:320px;overflow:auto}
 .mod-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 10px;border-radius:12px;background:rgba(255,255,255,.06)}
 .mod-item b{display:block;font-size:14px}.mod-item small{color:var(--on-dark-2,#A3C2C2);font-size:12px}
@@ -829,7 +862,7 @@ details.l-q p{color:var(--texto-2);padding-bottom:20px;max-width:62ch}
       <a href="#telao" data-v="telao">Telão</a>
       <a href="#criar" data-v="criar" class="cta">Criar minha vitrine</a>
     </nav>
-    <div class="top-dir"><span class="proto">Protótipo</span><button class="tema-btn" id="tema-btn" type="button" aria-label="Mudar para o tema escuro" title="Mudar tema"><svg class="ic-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="ic-lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button></div>
+    <div class="top-dir"><span class="proto">Protótipo</span><button type="button" class="btn-entrar" id="btn-entrar" hidden><svg viewBox="0 0 48 48" width="18" height="18" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg><span>Entrar</span></button><button type="button" class="conta-btn" id="conta-btn" hidden aria-label="Minha conta"></button><button class="tema-btn" id="tema-btn" type="button" aria-label="Mudar para o tema escuro" title="Mudar tema"><svg class="ic-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="ic-lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button></div>
   </div>
 </header>
 
@@ -953,7 +986,7 @@ details.l-q p{color:var(--texto-2);padding-bottom:20px;max-width:62ch}
         <div class="l-passo" data-i="0"><span class="n">1</span><small class="quem">Para o comerciante · passo 1 de 3</small><h3>Fotografa o que vende ou o que já fez.</h3><p>Ou só manda um áudio: “faço instalação elétrica, atendo a região, a partir de R$ 80”.</p><span class="ok">Sem formulário, sem site, sem designer.</span><div class="l-mini"></div></div>
         <div class="l-passo" data-i="1"><span class="n">2</span><small class="quem">Para o comerciante · passo 2 de 3</small><h3>A IA monta a vitrine e o marketing.</h3><p>Catálogo com preços, descrição e foto de capa, e posts e stories prontos pra postar no Instagram e no WhatsApp.</p><span class="ok">Feito pela IA em segundos. Dá pra ajustar antes de publicar.</span><div class="l-mini"></div></div>
         <div class="l-passo" data-i="2"><span class="n">3</span><small class="quem">Para o comerciante · passo 3 de 3</small><h3>E já aparece no mapa do bairro.</h3><p>Cada vitrine criada povoa o mapa, e o comerciante ganha divulgação desde o primeiro dia.</p><span class="ok">≈ 5 min da foto ao mapa.</span><div class="l-mini"></div></div>
-        <div class="l-passo" data-i="3"><span class="n">4</span><small class="quem">Para o morador</small><h3>Busca, encontra e chama no WhatsApp.</h3><p>“Marmita perto”, “eletricista hoje”, “presente até R$ 50”: vê o que tem perto, com avaliações de vizinhos, e fala direto com quem faz.</p><span class="ok">Conversa direta, sem intermediário.</span><div class="l-mini"></div></div>
+        <div class="l-passo" data-i="3"><span class="n">4</span><small class="quem">Para o morador</small><h3>Busca, encontra e chama no WhatsApp.</h3><p>“Marmita perto”, “eletricista hoje”, “presente até R$ 50”: vê o que tem perto, com avaliações de vizinhos, e fala direto com quem faz.</p><span class="ok">Ou agenda um horário com o assistente da vitrine.</span><div class="l-mini"></div></div>
       </div>
     </div>
   </div></div>
@@ -961,17 +994,17 @@ details.l-q p{color:var(--texto-2);padding-bottom:20px;max-width:62ch}
   <!-- Planos -->
   <div class="l-sec l-planos" id="planos"><div class="l-wrap l-planos-grid">
     <div>
-      <h2 class="l-h2">Grátis pra encher o mapa. <span>Pro pra quem quer crescer.</span></h2>
+      <h2 class="l-h2">Grátis pra encher o mapa. <span>Pro e Premium pra quem quer crescer.</span></h2>
       <p class="l-lead">Pra aparecer no mapa, nada.</p>
-      <p class="l-lead2">A vitrine básica é grátis. O Pro faz o marketing toda semana, e o Destaque coloca a vitrine primeiro nas buscas da região. Quem paga é sempre o comerciante; o morador usa de graça.</p>
+      <p class="l-lead2">O plano Básico é grátis. O Pro, por R$ 14,90 por mês, dá mais fotos e posts. O Premium, por R$ 49,90 por mês, libera tudo sem limite, coloca a vitrine em primeiro no mapa e agenda clientes com um assistente. Quem paga é sempre o comerciante; o morador usa de graça.</p>
       <div class="l-ctas"><a href="#criar" class="btn btn-branco">Criar minha vitrine <span class="seta">→</span></a></div>
     </div>
     <div class="l-ticket">
       <div class="l-ticket-topo">
-        <div class="l-seg" role="group" aria-label="Escolher plano"><button type="button" data-plano="gratis" aria-pressed="true">Grátis</button><button type="button" data-plano="pro" aria-pressed="false">Pro</button><button type="button" data-plano="destaque" aria-pressed="false">Destaque</button></div>
+        <div class="l-seg" role="group" aria-label="Escolher plano"><button type="button" data-plano="gratis" aria-pressed="true">Básico</button><button type="button" data-plano="pro" aria-pressed="false">Pro</button><button type="button" data-plano="premium" aria-pressed="false">Premium</button></div>
         <svg class="l-selo" viewBox="0 0 100 100" aria-hidden="true"><defs><path id="l-circ" d="M50 50m-38 0a38 38 0 1 1 76 0a38 38 0 1 1-76 0"/></defs><g class="giro"><text font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700" letter-spacing="2.4" fill="currentColor"><textPath href="#l-circ" id="l-selo-txt">GRÁTIS PRA SEMPRE · SEM TAXA ·</textPath></text></g><circle cx="50" cy="50" r="20" fill="currentColor" opacity=".1"/><path transform="translate(50 62) scale(.62)" fill="currentColor" d="M0 0L-10.61 -10.61A15 15 0 1 1 10.61 -10.61Z"/></svg>
       </div>
-      <div class="l-plano-nome" id="l-plano-nome">Vitrine básica</div>
+      <div class="l-plano-nome" id="l-plano-nome">Plano Básico</div>
       <div class="l-preco"><b id="l-preco">R$ 0</b><span id="l-preco-per">pra sempre</span></div>
       <ul class="l-lista" id="l-lista"></ul>
       <div class="l-ticket-rodape"><span id="l-plano-nota">Pra encher o mapa do bairro.</span><a href="#criar" id="l-plano-link" style="font-weight:700;color:var(--violeta-txt);text-decoration:none">Começar agora →</a></div>
@@ -1043,7 +1076,8 @@ details.l-q p{color:var(--texto-2);padding-bottom:20px;max-width:62ch}
     <div>
       <details class="l-q" open><summary>O que é o Vitrine?</summary><p>Um marketplace de bairro. O comerciante ou autônomo tira uma foto, ou manda um áudio, e a IA cria a vitrine dele: catálogo com preços, foto de capa e posts e stories prontos. A vitrine entra num mapa do bairro, e quem mora perto encontra e chama no WhatsApp.</p></details>
       <details class="l-q"><summary>Preciso baixar algum aplicativo?</summary><p>Não. O Vitrine abre no navegador do celular ou do computador. Pra quem vende e pra quem procura, basta o link ou o QR code.</p></details>
-      <details class="l-q"><summary>Quanto custa?</summary><p>Criar a vitrine e aparecer no mapa é grátis. O plano Pro, mensal, gera posts e stories novos toda semana e mostra visitas e cliques. O Destaque no bairro coloca a vitrine primeiro nas buscas da região. Pra quem procura, é sempre grátis.</p></details>
+      <details class="l-q"><summary>Quanto custa?</summary><p>O plano Básico é grátis: 3 fotos de vitrine e 5 stories e posts por mês, e a vitrine no mapa com avaliações, contato e agendamento. O Pro custa R$ 14,90 por mês, com 5 fotos e 10 stories e posts. O Premium custa R$ 49,90 por mês: tudo ilimitado, prioridade no mapa e agendamento por chatbot. Pra quem procura, é sempre grátis.</p></details>
+      <details class="l-q"><summary>Dá pra agendar um horário?</summary><p>Sim. Na vitrine, o botão “Agendar horário” abre um assistente que pergunta o serviço, o dia, o horário e o que o comerciante precisa saber. As perguntas são criadas pela IA para cada tipo de negócio. No fim, o pedido chega pronto no WhatsApp do comerciante, que confirma.</p></details>
       <details class="l-q"><summary>Como a IA monta a vitrine?</summary><p>Ela lê a foto, inclusive preços escritos nela, e a frase ou o áudio, e sugere nome, categoria, descrição e catálogo com preços. Você revisa e ajusta tudo antes de publicar.</p></details>
       <details class="l-q"><summary>Meu endereço aparece no mapa?</summary><p>Não. O mapa mostra só a região aproximada onde você atende.</p></details>
       <details class="l-q"><summary>Como o morador entra em contato?</summary><p>Pelo botão “Chamar no WhatsApp”, que abre a conversa com uma mensagem pronta. A combinação é direta entre vocês, e depois o vizinho pode deixar uma avaliação.</p></details>
@@ -1146,6 +1180,7 @@ details.l-q p{color:var(--texto-2);padding-bottom:20px;max-width:62ch}
       <div class="criar-acoes">
         <button class="btn btn-amarelo" id="btn-criar">Criar minha vitrine</button>
         <span class="dica" id="criar-erro"></span>
+        <p class="conta-aviso" id="conta-aviso" hidden></p>
       </div>
     </div>
 
@@ -1184,6 +1219,7 @@ details.l-q p{color:var(--texto-2);padding-bottom:20px;max-width:62ch}
           <div class="campo"><label for="ed-nome">Nome</label><input id="ed-nome"></div>
           <div class="campo"><label for="ed-desc">Descrição</label><textarea id="ed-desc" style="min-height:80px"></textarea></div>
           <div class="campo"><span class="rotulo">Catálogo · nome e preço (R$)</span><div class="itens-ed" id="itens-ed"></div><button class="link-btn" id="add-item">+ Adicionar item</button></div>
+          <div class="campo"><span class="rotulo">Perguntas do agendamento · criadas pela IA</span><div class="perg-ed" id="perg-ed"></div><small class="dica">O assistente da vitrine faz essas perguntas antes de mandar o pedido no seu WhatsApp.</small></div>
           <div class="story-caixa post-caixa"><span class="rotulo">Post para o feed</span><canvas id="post" width="1080" height="1080" aria-label="Prévia do post"></canvas></div>
           <p class="aviso-ia" id="aviso-ia">No protótipo a IA é simulada: o texto sai de modelos prontos a partir da sua frase.</p>
         </div>
@@ -1398,7 +1434,7 @@ function renderResultados(){
     <span class="av">${esc(iniciais(v.nome))}</span>
     <div style="min-width:0"><div class="nome">${esc(v.nome)}</div><div class="linha">${esc(CATS[v.cat].r)} · a partir de ${brl(precoMin(v))}</div>
     <div class="meta">${v.nota?`<span>★ ${v.nota.toFixed(1).replace(".",",")}</span><span>${v.viz} vizinhos</span>`:`<span>novo no bairro</span>`}<span>${fmtDist(dist(v))}</span>${v.hoje?`<span class="hoje">atende hoje</span>`:""}</div></div>
-    <div class="acoes"><button class="btn btn-verde" data-zap="${esc(v.id)}">${icZap}Chamar no WhatsApp</button><button class="btn btn-fantasma" data-ver="${esc(v.id)}">Ver vitrine</button></div>
+    <div class="acoes"><button class="btn btn-verde" data-zap="${esc(v.id)}">${icZap}Chamar no WhatsApp</button><button class="btn btn-agenda" data-agendar="${esc(v.id)}" aria-label="Agendar horário">${icAgenda}Agendar</button><button class="btn btn-fantasma" data-ver="${esc(v.id)}">Ver vitrine</button></div>
   </div>`).join("");
 }
 const icZap=`<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></svg>`;
@@ -1413,7 +1449,7 @@ function vitrineHTML(v,{selo=""}={}){
     <div class="vit-meta">${v.nota?`<span>★ ${v.nota.toFixed(1).replace(".",",")} · ${v.viz} vizinhos</span>`:`<span>novo no bairro</span>`}<span>${fmtDist(dist(v))} de você</span>${v.hoje?`<span style="color:var(--verde-txt);font-weight:700">atende hoje</span>`:""}</div>
     <p class="vit-desc">${esc(v.desc)}</p>
     <ul class="catalogo">${v.itens.map(i=>`<li><span>${esc(i.nome)}</span><span>a partir de ${brl(i.preco)}</span></li>`).join("")}</ul>
-    <button class="btn btn-verde" data-zap="${esc(v.id)}">${icZap}Chamar no WhatsApp</button>
+    <div class="vit-acoes"><button class="btn btn-verde" data-zap="${esc(v.id)}">${icZap}Chamar no WhatsApp</button><button class="btn btn-agenda" data-agendar="${esc(v.id)}">${icAgenda}Agendar horário</button></div>
   </div></article>`;
 }
 
@@ -1432,24 +1468,122 @@ function verVitrine(id){
     <div class="story-caixa"><span class="rotulo">Story deste negócio</span><canvas id="story-sheet" width="1080" height="1920" style="max-width:220px"></canvas></div></div>`);
   desenharStory($("#story-sheet"),v);
 }
+let ZAP_ESTANDE=null;
+function destinoZap(v){
+  const n=(v.zap||"").replace(/\D/g,"");
+  if(!v.exemplo&&n.length>=10)return {numero:n,estande:false};
+  if(ZAP_ESTANDE)return {numero:ZAP_ESTANDE,estande:true};
+  return null;
+}
+function linkZap(d,texto){return `https://wa.me/${d.numero.length<=11?"55"+d.numero:d.numero}?text=${encodeURIComponent(texto)}`}
+function textoEstande(v,texto){return `[Demonstração na feira · vitrine "${v.nome}"]\n${texto}`}
+const AVISO_ESTANDE="Demonstração na feira: esta vitrine não tem WhatsApp próprio, então o pedido vai para o celular do estande da Vitrine.";
 function chamarZap(id){
   const v=porId(id);if(!v)return;
   const pedido=pedidoPara(v);
-  const numero=(v.zap||"").replace(/\D/g,"");
-  const real=!v.exemplo&&numero.length>=10;
-  const link=real?`https://wa.me/${numero.length<=11?"55"+numero:numero}?text=${encodeURIComponent(pedido)}`:"";
+  const d=destinoZap(v),real=!!d;
+  const link=real?linkZap(d,d.estande?textoEstande(v,pedido):pedido):"";
   abrirSheet(`<div class="sheet-grid"><div class="wa">
       <div class="wa-cab"><span class="av" style="background:#fff;color:var(--verde)">${esc(iniciais(v.nome))}</span><div><b>${esc(v.nome)}</b><small>pelo app Vitrine</small></div></div>
       <div class="wa-corpo" id="wa-corpo"><div class="msg eu">${esc(pedido)}</div></div>
     </div>
-    ${real?`<a class="btn btn-verde" href="${link}" target="_blank" rel="noopener">${icZap}Abrir no WhatsApp</a><p class="aviso-sim">Número: <span style="user-select:all">${esc(v.zap)}</span></p>`
-      :`<p class="aviso-sim">Conversa simulada. Este negócio é um exemplo do protótipo.</p>`}</div>`);
+    ${real?`<a class="btn btn-verde" href="${link}" target="_blank" rel="noopener">${icZap}Abrir no WhatsApp</a><p class="aviso-sim">${d.estande?AVISO_ESTANDE:`Número: <span style="user-select:all">${esc(v.zap)}</span>`}</p>`
+      :`<p class="aviso-sim"><b>Simulação.</b> ${v.exemplo?"Este negócio é um exemplo do protótipo, sem WhatsApp de verdade.":"Esta vitrine não tem WhatsApp cadastrado."} Com o número, a conversa abriria no WhatsApp com essa mensagem.</p>`}</div>`);
   if(!real){
     const c=$("#wa-corpo");
     setTimeout(()=>{if(!c.isConnected)return;c.insertAdjacentHTML("beforeend",`<div class="digitando">${esc(v.nome)} está digitando…</div>`)},700);
-    setTimeout(()=>{if(!c.isConnected)return;c.querySelector(".digitando")?.remove();c.insertAdjacentHTML("beforeend",`<div class="msg"><b>${esc(v.nome)}</b>${esc(v.resp||"Oi! Consigo sim, vamos combinar.")}</div>`)},2000);
+    setTimeout(()=>{if(!c.isConnected)return;c.querySelector(".digitando")?.remove();c.insertAdjacentHTML("beforeend",`<div class="msg"><b>${esc(v.nome)} · resposta simulada</b>${esc(v.resp||"Oi! Consigo sim, vamos combinar.")}</div>`)},2000);
   }
 }
+
+/* ---------- Assistente de agendamento ----------
+   Conversa guiada: serviço → dia → horário → perguntas do comerciante (criadas pela IA) → nome.
+   No fim, o pedido vai pronto para o WhatsApp do comerciante. Nas vitrines de exemplo, a resposta é simulada. */
+const icAgenda='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>';
+const PERGUNTAS={
+  eletricista:["O que precisa ser feito? (ex.: chuveiro queimou, tomada sem energia)","Em que rua ou ponto de referência?"],
+  encanador:["Qual é o problema? (vazamento, entupimento…)","Em que rua ou ponto de referência?"],
+  marmita:["Quantas marmitas?","Vai retirar ou quer entrega?"],
+  bolos:["Pra quantas pessoas?","Algum sabor ou tema?"],
+  beleza:["Prefere atendimento em casa ou no espaço da profissional?"],
+  costura:["Qual é a peça e o que precisa ajustar?"],
+  limpeza:["É casa ou apartamento? Quantos cômodos?"],
+  bazar:["Qual peça te interessou?"],
+  artesanato:["É pra presente? Alguma cor ou tema?"],
+  pet:["Qual o porte e a raça do pet?","Precisa buscar e levar?"],
+  aulas:["Qual matéria e série?","Online ou presencial?"],
+  reparos:["O que precisa ser consertado?","Em que rua ou ponto de referência?"],
+  outros:["Conta rapidinho o que você precisa."]
+};
+function perguntasDe(v){return (v.perguntas&&v.perguntas.length?v.perguntas:(PERGUNTAS[v.cat]||PERGUNTAS.outros)).slice(0,3)}
+function diasAgenda(v){
+  const nomes=["dom","seg","ter","qua","qui","sex","sáb"],out=[],hoje=new Date();
+  for(let i=v.hoje?0:1;out.length<5;i++){
+    const d=new Date(hoje);d.setDate(hoje.getDate()+i);
+    out.push(i===0?"Hoje":i===1?"Amanhã":`${nomes[d.getDay()]} ${String(d.getDate()).padStart(2,"0")}/${String(d.getMonth()+1).padStart(2,"0")}`);
+  }
+  return out;
+}
+let agenda=null;
+function agendar(id){
+  const v=porId(id);if(!v)return;
+  const passos=[
+    {k:"Serviço",q:`Oi! Sou o assistente de agendamento de ${v.nome}. Qual serviço você quer?`,op:[...v.itens.map(i=>`${i.nome} · a partir de ${brl(i.preco)}`),"Outro / orçamento"]},
+    {k:"Dia",q:"Pra qual dia?",op:diasAgenda(v)},
+    {k:"Horário",q:"Qual horário fica melhor?",op:["9h","11h","14h","16h","18h"]},
+    ...perguntasDe(v).map(p=>({k:p,q:p,txt:true})),
+    {k:"Nome",q:"Pra fechar: qual é o seu nome?",txt:true}
+  ];
+  agenda={v,passos,i:0,resp:[]};
+  abrirSheet(`<div class="sheet-grid"><div class="wa ag">
+      <div class="wa-cab"><span class="av" style="background:#fff;color:var(--verde)">${esc(iniciais(v.nome))}</span><div><b>${esc(v.nome)}</b><small>Assistente de agendamento · app Vitrine</small></div></div>
+      <div class="wa-corpo" id="ag-corpo" aria-live="polite"></div>
+      <div class="ag-resp" id="ag-resp"></div>
+    </div><p class="aviso-sim">As perguntas foram criadas pela IA para este tipo de negócio. ${(()=>{const d=destinoZap(v);return d?(d.estande?"Na feira, o pedido chega de verdade no celular do estande.":"O pedido chega pronto no WhatsApp do comerciante, que confirma."):(v.exemplo?"Vitrine de exemplo: o envio e a resposta são simulados.":"Esta vitrine não tem WhatsApp cadastrado: o envio e a resposta são simulados.")})()}</p></div>`);
+  agPergunta();
+}
+function agBot(html){const c=$("#ag-corpo");if(!c)return;c.insertAdjacentHTML("beforeend",`<div class="msg"><b>Assistente</b>${html}</div>`);c.scrollTop=c.scrollHeight}
+function agEu(t){const c=$("#ag-corpo");if(!c)return;c.insertAdjacentHTML("beforeend",`<div class="msg eu">${esc(t)}</div>`);c.scrollTop=c.scrollHeight}
+function agPergunta(){
+  const a=agenda,r=$("#ag-resp");if(!a||!r)return;
+  if(a.i>=a.passos.length)return agResumo();
+  const p=a.passos[a.i];
+  agBot(esc(p.q));
+  if(p.txt){
+    r.innerHTML=`<form class="ag-form" id="ag-form"><input id="ag-txt" type="text" maxlength="120" autocomplete="off" placeholder="Digite aqui" aria-label="${esc(p.q)}" required><button class="btn btn-verde" type="submit">Enviar</button></form>`;
+    const f=$("#ag-form");f.onsubmit=ev=>{ev.preventDefault();const t=$("#ag-txt").value.trim();if(!t)return;agResponder(t)};
+    setTimeout(()=>$("#ag-txt")?.focus(),50);
+  }else{
+    r.innerHTML=`<div class="ag-ops">${p.op.map((o,i)=>`<button type="button" class="ag-op" data-op="${i}">${esc(o)}</button>`).join("")}</div>`;
+    r.querySelectorAll("[data-op]").forEach(b=>b.onclick=()=>agResponder(p.op[+b.dataset.op].split(" · ")[0]));
+  }
+}
+function agResponder(t){agEu(t);agenda.resp.push(t);agenda.i++;$("#ag-resp").innerHTML="";setTimeout(agPergunta,350)}
+function agResumo(){
+  const {v,passos,resp}=agenda;
+  const linhas=passos.map((p,i)=>`${p.k.replace(/[\s?:.!]+$/,"")}: ${resp[i]}`);
+  const nomeCli=resp[resp.length-1];
+  const pn=v.nome.split(/[\s&]/)[0];
+  const texto=`Oi, ${pn}! Te achei no app Vitrine e queria agendar:\n${linhas.slice(0,-1).map(l=>"• "+l).join("\n")}\nMeu nome é ${nomeCli}.`;
+  const d=destinoZap(v),real=!!d;
+  agBot(`Prontinho, ${esc(nomeCli)}! Este é o seu pedido:<span class="ag-resumo">${linhas.slice(0,3).map(l=>esc(l)).join("<br>")}</span>`);
+  const r=$("#ag-resp");
+  if(real){
+    const link=linkZap(d,d.estande?textoEstande(v,texto):texto);
+    r.innerHTML=`<a class="btn btn-verde" href="${link}" target="_blank" rel="noopener">${icZap}Enviar pedido no WhatsApp</a>${d.estande?`<p class="aviso-sim" style="margin-top:8px">${AVISO_ESTANDE}</p>`:""}`;
+  }else{
+    r.innerHTML=`<button type="button" class="btn btn-verde" id="ag-enviar">${icZap}Enviar pedido (simulação)</button>`;
+    $("#ag-enviar").onclick=()=>{
+      r.innerHTML="";
+      const c=$("#ag-corpo");
+      c.insertAdjacentHTML("beforeend",`<div class="sim-aviso"><b>Simulação</b>${v.exemplo?"Esta é uma vitrine de exemplo, sem WhatsApp de verdade.":"Esta vitrine não tem WhatsApp cadastrado."} Com o número, o pedido chegaria assim no celular de ${esc(v.nome)}:<span class="sim-msg">${esc(texto)}</span></div>`);
+      c.scrollTop=c.scrollHeight;
+      setTimeout(()=>{if(!c.isConnected)return;c.insertAdjacentHTML("beforeend",`<div class="digitando">${esc(v.nome)} está digitando… (simulação)</div>`);c.scrollTop=c.scrollHeight},700);
+      setTimeout(()=>{if(!c.isConnected)return;c.querySelector(".digitando")?.remove();c.insertAdjacentHTML("beforeend",`<div class="msg"><b>${esc(v.nome)} · resposta simulada</b>Confirmado, ${esc(nomeCli)}! ${esc(resp[1])} às ${esc(resp[2])}. Até lá!</div>`);c.scrollTop=c.scrollHeight},2000);
+    };
+  }
+}
+
 function pedidoPara(v){
   const pn=v.nome.split(/[\s&]/)[0];
   const item=v.itens[0]?.nome.toLowerCase()||"um orçamento";
@@ -1460,6 +1594,7 @@ function pedidoPara(v){
 /* cliques globais */
 document.addEventListener("click",e=>{
   const z=e.target.closest("[data-zap]");if(z){e.stopPropagation();chamarZap(z.dataset.zap);return}
+  const ag=e.target.closest("[data-agendar]");if(ag){e.stopPropagation();agendar(ag.dataset.agendar);return}
   const vv=e.target.closest("[data-ver]");if(vv){e.stopPropagation();verVitrine(vv.dataset.ver);return}
   const pin=e.target.closest(".pin[data-id]");
   if(pin){const id=pin.dataset.id;if(pin.closest("#mapa-main")){selecionar(id,true)}else if(!pin.closest("#mapa-picker")){verVitrine(id)}return}
@@ -1649,6 +1784,8 @@ function animarGeracao(){
 function mostrarResultado(){
   mostrarEtapa(etR);
   $("#ed-nome").value=rascunho.nome;$("#ed-desc").value=rascunho.desc;
+  if(!rascunho.perguntas||!rascunho.perguntas.length)rascunho.perguntas=perguntasDe(rascunho).slice();
+  $("#perg-ed").innerHTML=[0,1,2].map(i=>`<input type="text" data-p="${i}" maxlength="90" placeholder="Pergunta ${i+1} (opcional)" value="${esc(rascunho.perguntas[i]||"")}">`).join("");
   renderItensEd();atualizarPrevia();
 }
 function renderItensEd(){
@@ -1661,6 +1798,7 @@ function atualizarPrevia(){
 }
 $("#ed-nome").addEventListener("input",e=>{rascunho.nome=e.target.value||"Sem nome";atualizarPrevia()});
 $("#ed-desc").addEventListener("input",e=>{rascunho.desc=e.target.value;atualizarPrevia()});
+$("#perg-ed").addEventListener("input",()=>{rascunho.perguntas=[...document.querySelectorAll("#perg-ed input")].map(i=>i.value.trim()).filter(Boolean)});
 $("#itens-ed").addEventListener("input",e=>{const t=e.target;if(t.dataset.i==null)return;const it=rascunho.itens[+t.dataset.i];if(t.dataset.k==="preco"){const p=parseFloat(t.value.replace(",","."));if(!isNaN(p))it.preco=p;if(it.origem){delete it.origem;t.parentElement.querySelector(".origem")?.remove()}}else it.nome=t.value;atualizarPrevia()});
 $("#itens-ed").addEventListener("click",e=>{const d=e.target.closest("[data-del]");if(!d||rascunho.itens.length<=1)return;rascunho.itens.splice(+d.dataset.del,1);renderItensEd();atualizarPrevia()});
 $("#add-item").onclick=()=>{rascunho.itens.push({nome:"Novo item",preco:precoMin(rascunho)});renderItensEd();atualizarPrevia()};
@@ -1697,12 +1835,12 @@ async function publicarNoServidor(v){
   if(!servidorVitrines)return;
   try{
     const {foto,...dados}=v;
-    const r=await fetch("/api/publicar",{method:"POST",headers:{"Content-Type":"application/json"},
+    const r=await fetch("/api/publicar",{method:"POST",headers:{"Content-Type":"application/json",...authHeader()},
       body:JSON.stringify({vitrine:dados,foto:typeof foto==="string"&&foto.startsWith("data:")?foto:null})});
     if(r.status===404||r.status===503){servidorVitrines=false;return}
     if(!r.ok){toast("A vitrine ficou só neste celular por enquanto: o servidor não respondeu.");return}
     const j=await r.json();
-    v.remota=true;if(j.foto_url)v.foto=j.foto_url;
+    v.remota=true;if(j.foto_url)v.foto=j.foto_url;if(j.conta)v.minha=true;
     try{const m=JSON.parse(localStorage.getItem("vitrine-minhas")||"{}");m[v.id]=j.token;localStorage.setItem("vitrine-minhas",JSON.stringify(m))}catch(e){}
   }catch(e){}
 }
@@ -1716,6 +1854,7 @@ function vitrineRemota(x){
   return {id:x.id,nome:txt(d.nome,60)||"Sem nome",cat:CATS[d.cat]?d.cat:"outros",desc:txt(d.desc,300),regiao:txt(d.regiao,60),itens,
     x:num(d.x,0,W,500),y:num(d.y,0,H,320),zap:String(d.zap||"").replace(/\D/g,"").slice(0,15),hoje:d.hoje===true,
     storyTit:d.storyTit?txt(d.storyTit,40):null,storySub:d.storySub?txt(d.storySub,60):null,
+    perguntas:(Array.isArray(d.perguntas)?d.perguntas:[]).map(p=>txt(p,90)).filter(Boolean).slice(0,3),
     foto,nota:null,viz:0,exemplo:false,remota:true,criadaEm:Date.parse(x.criada_em)||Date.now()};
 }
 let sincronizando=false;
@@ -1761,6 +1900,97 @@ $("#mod-lista").addEventListener("click",async e=>{
     renderTudo();renderFeed();renderModeracao();toast("Vitrine tirada do mapa.");
   }catch(err){toast("Sem conexão com o servidor.")}finally{b.disabled=false}
 });
+
+/* ---------- Login com Google (opcional) ----------
+   Só aparece hospedado na Vercel, com SUPABASE_PUBLISHABLE_KEY configurada (rota /api/config).
+   Criar vitrine continua sem login; quem entra encontra as próprias vitrines em "Minhas vitrines". */
+const G_LOGO=`<svg viewBox="0 0 48 48" width="18" height="18" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>`;
+let sb=null,sessao=null;
+function authHeader(){return sessao&&sessao.access_token?{Authorization:"Bearer "+sessao.access_token}:{}}
+function carregarScript(src){return new Promise((ok,erro)=>{const t=document.createElement("script");t.src=src;t.async=true;t.onload=ok;t.onerror=erro;document.head.appendChild(t)})}
+async function iniciarLogin(){
+  if(!COM_SERVIDOR)return;
+  let cfg;
+  try{const r=await fetch("/api/config");if(!r.ok)return;cfg=await r.json()}catch(e){return}
+  if(cfg&&typeof cfg.whatsappEstande==="string"&&/^\d{10,15}$/.test(cfg.whatsappEstande))ZAP_ESTANDE=cfg.whatsappEstande;
+  if(!cfg||!cfg.supabaseUrl||!cfg.publishableKey)return;
+  try{await carregarScript("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js")}catch(e){return}
+  if(!window.supabase||!window.supabase.createClient)return;
+  sb=window.supabase.createClient(cfg.supabaseUrl,cfg.publishableKey,{auth:{flowType:"pkce",detectSessionInUrl:true,persistSession:true,autoRefreshToken:true}});
+  sb.auth.onAuthStateChange((ev,s)=>{
+    sessao=s;renderConta();
+    if(ev==="SIGNED_IN"){
+      if(/[?&]code=/.test(location.search)){
+        let volta="";try{volta=sessionStorage.getItem("vitrine-volta")||"";sessionStorage.removeItem("vitrine-volta")}catch(e){}
+        history.replaceState(null,"",location.pathname+(volta||location.hash));
+        window.dispatchEvent(new HashChangeEvent("hashchange"));
+        toast(`Você entrou como ${nomeConta()}.`);
+      }
+    }
+  });
+  try{const {data}=await sb.auth.getSession();sessao=data.session}catch(e){}
+  renderConta();
+}
+function nomeConta(){const u=sessao&&sessao.user;if(!u)return"";const m=u.user_metadata||{};return (m.full_name||m.name||u.email||"").split(" ")[0]}
+function renderConta(){
+  const b=$("#btn-entrar"),c=$("#conta-btn"),av=$("#conta-aviso");
+  if(!sb){b.hidden=true;c.hidden=true;av.hidden=true;return}
+  const u=sessao&&sessao.user;
+  b.hidden=!!u;c.hidden=!u;av.hidden=false;
+  if(u){
+    const m=u.user_metadata||{};const nome=m.full_name||m.name||u.email||"Conta";
+    c.textContent=iniciais(nome);c.title=`${nome} · ${u.email||""}`;
+    av.innerHTML=`Conectado como <b>${esc(u.email||nome)}</b>. A vitrine fica guardada em <button type="button" class="link-btn" data-minhas>Minhas vitrines</button>.`;
+  }else{
+    av.innerHTML=`Opcional: <button type="button" class="link-btn" data-entrar>${G_LOGO} Entre com o Google</button> antes de criar para encontrar suas vitrines depois.`;
+  }
+}
+async function entrar(){
+  if(!sb)return;
+  try{sessionStorage.setItem("vitrine-volta",location.hash||"#inicio")}catch(e){}
+  const {error}=await sb.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.origin+"/"}});
+  if(error)toast("Não deu para abrir o login do Google agora.");
+}
+async function sair(){if(!sb)return;await sb.auth.signOut();sessao=null;renderConta();fecharSheet();toast("Você saiu da sua conta.")}
+async function abrirMinhas(){
+  if(!sessao)return entrar();
+  const u=sessao.user||{},m=u.user_metadata||{};
+  abrirSheet(`<div class="sheet-grid conta-sheet"><div>
+    <span class="rotulo">Minha conta</span>
+    <div class="conta-cab"><span class="conta-av">${esc(iniciais(m.full_name||m.name||u.email||"?"))}</span><div><b>${esc(m.full_name||m.name||"")}</b><small>${esc(u.email||"")}</small></div></div>
+    <h3 style="margin-top:18px">Minhas vitrines</h3>
+    <div class="minhas" id="minhas"><p class="dica">Carregando…</p></div>
+    <button type="button" class="btn btn-fantasma" id="btn-sair" style="margin-top:18px">Sair da conta</button>
+  </div></div>`);
+  $("#btn-sair").onclick=sair;
+  try{
+    const r=await fetch("/api/minhas",{headers:authHeader(),cache:"no-store"});
+    const el=$("#minhas");if(!el)return;
+    if(!r.ok){el.innerHTML=`<p class="dica">Não deu para carregar agora.</p>`;return}
+    const j=await r.json();
+    el.innerHTML=j.vitrines.length?j.vitrines.map(x=>{const d=x.dados||{};return `<div class="minha"><span><b>${esc(d.nome||"Sem nome")}</b><small>${esc((CATS[d.cat]||CATS.outros).r)} · ${new Date(x.criada_em).toLocaleDateString("pt-BR")}${x.oculta?" · fora do mapa":""}</small></span>${x.oculta?"":`<span class="minha-acoes"><button type="button" class="btn btn-fantasma" data-ver-minha="${esc(x.id)}">Ver</button><button type="button" class="btn btn-fantasma" data-tirar-minha="${esc(x.id)}">Tirar do mapa</button></span>`}</div>`}).join("")
+      :`<p class="dica">Você ainda não publicou nenhuma vitrine com esta conta. <a href="#criar" class="link-btn" data-fechar-sheet>Criar minha vitrine</a></p>`;
+  }catch(e){const el=$("#minhas");if(el)el.innerHTML=`<p class="dica">Sem conexão com o servidor.</p>`}
+}
+document.addEventListener("click",async e=>{
+  if(e.target.closest("#btn-entrar,[data-entrar]")){e.preventDefault();entrar();return}
+  if(e.target.closest("#conta-btn,[data-minhas]")){e.preventDefault();abrirMinhas();return}
+  if(e.target.closest("[data-fechar-sheet]")){fecharSheet();return}
+  const vm=e.target.closest("[data-ver-minha]");
+  if(vm){const id=vm.dataset.verMinha;fecharSheet();if(porId(id)){location.hash="#mapa";sel=id;renderTudo()}else{await carregarRemotas();if(porId(id)){location.hash="#mapa";sel=id;renderTudo()}else toast("Ela aparece no mapa em alguns segundos.")}return}
+  const tm=e.target.closest("[data-tirar-minha]");
+  if(tm){
+    tm.disabled=true;
+    try{
+      const r=await fetch("/api/apagar",{method:"POST",headers:{"Content-Type":"application/json",...authHeader()},body:JSON.stringify({id:tm.dataset.tirarMinha})});
+      if(!r.ok){toast("Não deu para tirar agora.");tm.disabled=false;return}
+      const i=criadas.findIndex(c=>c.id===tm.dataset.tirarMinha);if(i>=0)criadas.splice(i,1);
+      renderTudo();renderFeed();toast("Vitrine tirada do mapa.");abrirMinhas();
+    }catch(err){toast("Sem conexão com o servidor.");tm.disabled=false}
+  }
+});
+iniciarLogin();
+
 if(COM_SERVIDOR){
   setTimeout(carregarRemotas,400);
   setInterval(carregarRemotas,10000);
@@ -1800,9 +2030,9 @@ function initLanding(){
 
   /* planos */
   const PLANOS={
-    gratis:{nome:"Vitrine básica",preco:"R$ 0",per:"pra sempre",selo:"GRÁTIS PRA SEMPRE · SEM TAXA ·",nota:"Pra encher o mapa do bairro.",itens:["Vitrine montada pela IA a partir de uma foto","Pino no mapa do bairro","Botão para chamar no WhatsApp","Um post e um story de lançamento"]},
-    pro:{nome:"Marketing toda semana",preco:"R$ 29",per:"/mês",selo:"MARKETING TODA SEMANA · ",nota:"Valor de exemplo: o preço do Pro ainda está sendo definido.",itens:["Tudo da vitrine básica","Posts e stories novos toda semana, gerados automaticamente","Estatísticas de visitas e cliques no WhatsApp"]},
-    destaque:{nome:"Destaque no bairro",preco:"R$ 15",per:"/mês",selo:"PRIMEIRO NAS BUSCAS · ",nota:"Valor de exemplo: o preço do Destaque ainda está sendo definido.",itens:["Aparece primeiro nas buscas da região","Pino em destaque no mapa","Selo de destaque na vitrine","Combina com o grátis ou com o Pro"]}
+    gratis:{nome:"Plano Básico",preco:"R$ 0",per:"pra sempre",selo:"GRÁTIS PRA SEMPRE · SEM TAXA ·",nota:"Pra encher o mapa do bairro.",itens:["3 fotos de vitrine por mês","5 stories e posts pro Instagram por mês","Aparece no mapa do bairro com avaliações, contato e agendamento"]},
+    pro:{nome:"Plano Pro",preco:"R$ 14,90",per:"/mês",selo:"PLANO PRO · MAIS MARKETING · ",nota:"Assinatura mensal.",itens:["5 fotos de vitrine por mês","10 stories e posts pro Instagram por mês","Aparece no mapa do bairro com avaliações, contato e agendamento"]},
+    premium:{nome:"Plano Premium",preco:"R$ 49,90",per:"/mês",selo:"PREMIUM · SEM LIMITES · ",nota:"Assinatura mensal. O assistente de agendamento é a novidade em teste no protótipo.",itens:["Fotos de vitrine ilimitadas","Stories e posts ilimitados","Prioridade no mapa do bairro","Agendamento por chatbot, com perguntas criadas pela IA"]}
   };
   function plano(id){
     const p=PLANOS[id];
@@ -1896,12 +2126,13 @@ function promptIA(frase,nome,nImgs){
   return `Você é a IA do Vitrine, um app que monta a página de comerciantes e autônomos de bairro no Brasil.
 A partir ${nImgs?"das fotos anexadas e ":""}da frase do comerciante, monte a página.${nImgs?"\nPrimeiro leia com atenção todo texto visível nas fotos (etiquetas, cardápio, placa, papel colado, letra à mão), depois entenda o que a foto mostra.":""}
 Responda APENAS com um objeto JSON válido, sem nenhum texto antes ou depois, exatamente neste formato:
-{"texto_lido": "todo o texto que aparece nas fotos, copiado como está (ou vazio se não houver)", "nome": "nome curto do negócio", "categoria": "uma destas chaves: ${Object.keys(CATS).join(", ")}", "descricao": "1 ou 2 frases simples e calorosas, até 180 caracteres", "itens": [{"nome": "produto ou serviço", "preco": 80, "origem": "foto | frase | estimado"}], "atende_hoje": true, "titulo_story": "chamada curta para story, até 30 caracteres", "sub_story": "complemento, até 50 caracteres"}
+{"texto_lido": "todo o texto que aparece nas fotos, copiado como está (ou vazio se não houver)", "nome": "nome curto do negócio", "categoria": "uma destas chaves: ${Object.keys(CATS).join(", ")}", "descricao": "1 ou 2 frases simples e calorosas, até 180 caracteres", "itens": [{"nome": "produto ou serviço", "preco": 80, "origem": "foto | frase | estimado"}], "atende_hoje": true, "titulo_story": "chamada curta para story, até 30 caracteres", "sub_story": "complemento, até 50 caracteres", "perguntas_agendamento": ["2 ou 3 perguntas curtas que o comerciante faria a um cliente antes de agendar"]}
 Regras:
 - Português do Brasil, tom simples e próximo, como se fosse um vizinho falando.
 - Se o comerciante informou um nome, use-o no nome do negócio (ex.: "Zé" + elétrica = "Zé Elétrica"). Se não informou, crie um nome simpático e curto.
 - De 3 a 5 itens no catálogo, com preços "a partir de" em reais, coerentes com o que aparece na frase e nas fotos. Se a frase der um preço, respeite-o. Se a foto mostrar um preço, use exatamente o da foto.
 - "origem" de cada item: "foto" se o preço foi lido nas fotos, "frase" se veio da frase, "estimado" se você estimou.
+- "perguntas_agendamento": perguntas que ajudam o comerciante a se preparar (ex.: eletricista: "O que precisa ser feito?"; bolos: "Pra quantas pessoas?"). Não pergunte serviço, dia, horário nem nome: isso já é perguntado.
 - "atende_hoje" é true só se a frase indicar atendimento no mesmo dia ou todos os dias.
 - Não invente telefone, endereço nem avaliações.
 Dados do comerciante:
@@ -1928,7 +2159,8 @@ function normalizarIA(r,frase,nome){
   if(!itens.length)itens=base.itens;
   return {cat,nome:(String(r.nome||"").trim().slice(0,40))||base.nome,desc:(String(r.descricao||"").trim().slice(0,240))||base.desc,itens,
     hoje:typeof r.atende_hoje==="boolean"?r.atende_hoje:base.hoje,regiao:"Santa Adélia e região",
-    storyTit:String(r.titulo_story||"").trim().slice(0,40)||null,storySub:String(r.sub_story||"").trim().slice(0,60)||null,textoLido:String(r.texto_lido||"").trim().slice(0,400)};
+    storyTit:String(r.titulo_story||"").trim().slice(0,40)||null,storySub:String(r.sub_story||"").trim().slice(0,60)||null,textoLido:String(r.texto_lido||"").trim().slice(0,400),
+    perguntas:(Array.isArray(r.perguntas_agendamento)?r.perguntas_agendamento:[]).map(p=>String(p||"").trim().slice(0,90)).filter(Boolean).slice(0,3)};
 }
 const MOTIVOS={
   "sem-ia":"Modo demonstração: aqui o texto sai de modelos prontos a partir da sua frase. Com a IA ligada, o Claude Sonnet lê o texto da foto e escreve tudo.","erro":"Não deu para falar com a IA agora, então a vitrine foi montada no modo demonstração.",

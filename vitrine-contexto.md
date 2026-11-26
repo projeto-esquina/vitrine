@@ -9,7 +9,7 @@
 | **Disciplina** | ESMA002-23 · Inovações para Engenharia |
 | **Evento** | Feira EI2026, apresentação em estande, **9 de dezembro (quarta)** |
 | **Fase atual** | Protótipo navegável (PC e navegador do celular) com IA de verdade pelo servidor |
-| **Última atualização** | 17/11/2026 (v3.2) |
+| **Última atualização** | 24/11/2026 (v3.6) |
 | **Site no ar** | https://vitrine-ufabc-ieng.vercel.app/ |
 | **Fontes** | Resumo final do projeto (PDF "Projeto IENG · Vitrine e Marketplace") + vídeo-pitch final (2 min) + decisões tomadas na construção do protótipo |
 
@@ -79,13 +79,23 @@ Revisar os números perto da feira: o IBGE publica a PNAD todo mês.
 
 ## 5. Quem paga
 
-| Plano | O que inclui | Quem paga | Preço no protótipo |
-|---|---|---|---|
-| **Grátis** (vitrine básica) | Vitrine básica, para encher o mapa rápido | Ninguém | R$ 0 |
-| **Pro** (assinatura mensal) | Posts e stories novos toda semana, gerados automaticamente; estatísticas de visitas e cliques | Comerciante ou autônomo | R$ 29/mês (**exemplo**) |
-| **Destaque no bairro** | Aparecer primeiro nas buscas da região | Comerciante ou autônomo | R$ 15/mês (**exemplo**) |
+| Plano | Preço | O que inclui |
+|---|---|---|
+| **Básico** | Grátis | 3 fotos de vitrine por mês · 5 stories e posts pro Instagram por mês · aparece no mapa do bairro com avaliações, contato e agendamento |
+| **Pro** | R$ 14,90/mês | 5 fotos de vitrine por mês · 10 stories e posts pro Instagram por mês · aparece no mapa do bairro com avaliações, contato e agendamento |
+| **Premium** | R$ 49,90/mês | Fotos de vitrine ilimitadas · stories e posts ilimitados · prioridade no mapa do bairro · agendamento por chatbot (perguntas criadas pela IA) |
 
-Os preços do Pro e do Destaque são definidos no escopo Financeiro (seção 13). No site, aparecem marcados como valores de exemplo.
+Quem paga é sempre o comerciante ou autônomo; o morador usa de graça. Preços definidos pelo escopo Financeiro (24/11). No protótipo, os limites por mês são só informativos (não há cobrança nem contagem).
+
+### 5.1 Agendamento por chatbot
+Ideia do grupo (24/11): um agente de agendamento para os clientes, que faz as perguntas e entrega o pedido no WhatsApp do comerciante, já que o cliente conhece o produto por ali.
+
+**Como está no protótipo:**
+- Toda vitrine tem o botão **"Agendar horário"**, que abre um assistente em formato de conversa: serviço (do catálogo) → dia → horário → **perguntas do comerciante** → nome.
+- As perguntas são **criadas pela IA** junto com a vitrine (campo `perguntas_agendamento` no JSON do Sonnet), conforme o tipo de negócio: eletricista "O que precisa ser feito?", bolos "Pra quantas pessoas?". Sem IA, cada categoria tem perguntas padrão. O comerciante pode editar as perguntas na revisão, antes de publicar.
+- No fim, o pedido vai pronto para o **WhatsApp do comerciante** (link wa.me com a mensagem montada), e ele confirma por lá. Nas vitrines de exemplo, a confirmação é simulada.
+
+**Depois da feira (se o projeto seguir):** chatbot rodando dentro do próprio WhatsApp (API oficial do WhatsApp Business), com agenda de horários livres do comerciante e confirmação automática.
 
 ---
 
@@ -146,11 +156,11 @@ Um site que funciona no PC e no navegador do celular, sem app.
 | 5 | **Por que funciona** *(novo)* | "Todo marketplace de bairro começa vazio." + três cards: O marketing vem pronto · Um bairro de cada vez · Cada vitrine puxa a próxima |
 | 6 | **Antes e depois** | "Do papel no poste à tela do celular": o bilhete da Tê × a vitrine dela |
 | 7 | **Como funciona** | Celular fixo que troca de tela com a rolagem, nos passos do pitch: Comerciante 1/3 Fotografa · 2/3 A IA monta a vitrine e o marketing · 3/3 Aparece no mapa · Morador: busca, encontra e chama no WhatsApp |
-| 8 | **Planos** | "Grátis pra encher o mapa. Pro pra quem quer crescer." Ticket com seletor **Grátis / Pro / Destaque** |
+| 8 | **Planos** | "Grátis pra encher o mapa. Pro e Premium pra quem quer crescer." Ticket com seletor **Básico / Pro / Premium** (R$ 0, R$ 14,90 e R$ 49,90) |
 | 9 | **Confiança em cada pino** | Avaliações de vizinhos · Fotos de verdade · Endereço protegido · Conversa direta |
 | 10 | **Quem já usou** | Três falas **fictícias, marcadas como fictícias** (Tê, Zé e Lu), até chegarem as falas das entrevistas |
 | 11 | **Demonstração no estande** *(novo)* | Faixa turquesa "Teste o app Vitrine na feira, em um minuto" com os 4 passos e os botões "Começar pela foto" e "Abrir o telão" |
-| 12 | **Perguntas frequentes** | O que é · Precisa baixar app? · Quanto custa (com Destaque) · Como a IA monta · Endereço no mapa · Contato · Onde começa (Santo André) · Quem pode criar |
+| 12 | **Perguntas frequentes** | O que é · Precisa baixar app? · Quanto custa (três planos) · Dá pra agendar? · Como a IA monta · Endereço no mapa · Contato · Onde começa (Santo André) · Quem pode criar |
 | 13 | **Chamada final e rodapé** | QR code "Abra no seu celular", "Compartilhar", links |
 
 **Removido na v3:** as quatro cartas que viravam ("Como funciona" antigo), porque repetiam a seção do celular, e o slogan "em um só lugar" / "Da foto ao balcão", trocados pelo slogan oficial.
@@ -159,8 +169,8 @@ Um site que funciona no PC e no navegador do celular, sem app.
 
 | Tela | O que tem |
 |---|---|
-| **Criar minha vitrine** (`#criar`) | Até 3 fotos (câmera ou galeria), frase ou áudio (simulado), nome, WhatsApp e área de atendimento no mapa. Geração animada com cronômetro. Resultado: vitrine, story, post e ajustes; quadro **"Lido na foto"**; cada preço marcado como "lido na foto", "da sua frase" ou "estimado · confira"; selo "Lido pelo Claude Sonnet" ou "Modo demonstração" |
-| **Mapa do bairro** (`#mapa`) | Busca ("eletricista hoje", "presente até R$ 50"), resultados por distância com nota, vizinhos que avaliaram e "atende hoje"; vitrine completa; WhatsApp; avaliação com estrelas |
+| **Criar minha vitrine** (`#criar`) | Até 3 fotos (câmera ou galeria), frase ou áudio (simulado), nome, WhatsApp e área de atendimento no mapa. Geração animada com cronômetro. Resultado: vitrine, story, post e ajustes; quadro **"Lido na foto"**; **perguntas do agendamento** criadas pela IA e editáveis; cada preço marcado como "lido na foto", "da sua frase" ou "estimado · confira"; selo "Lido pelo Claude Sonnet" ou "Modo demonstração" |
+| **Mapa do bairro** (`#mapa`) | Busca ("eletricista hoje", "presente até R$ 50"), resultados por distância com nota, vizinhos que avaliaram e "atende hoje"; vitrine completa; WhatsApp; **Agendar horário** (assistente, seção 5.1); avaliação com estrelas |
 | **Telão** (`#telao`) | Mapa para projetor, contador "vitrines no mapa do bairro", QR code com link editável, últimas vitrines, tela cheia e **Moderar vitrines** (com senha do grupo, tira uma vitrine do mapa) |
 | **Painel Pro** (`#painel`) | Dados de exemplo do Zé Elétrica: visitas na vitrine, cliques no WhatsApp, posts gerados |
 
@@ -174,7 +184,8 @@ Um site que funciona no PC e no navegador do celular, sem app.
 | Mapa | Ilustrado, não geográfico |
 | Vitrines criadas | Com o Supabase ligado, vão para o banco e aparecem no mapa e no telão de todo mundo em até 10 s. Sem ele, ficam só no navegador de quem criou |
 | Áudio, painel Pro, depoimentos | Simulados ou de exemplo, sinalizados na tela |
-| Login e pagamento | Fora do protótipo |
+| Login | **Login com Google opcional** (Supabase Auth): botão Entrar no topo; quem entra antes de publicar vira dono da vitrine e a vê em "Minhas vitrines" (e pode tirá-la do mapa). Criar vitrine continua sem login, para o ciclo de 1 minuto da feira |
+| Pagamento | Fora do protótipo |
 
 ### 7.5 Vitrines de exemplo
 Zé Elétrica (tomada R$ 80, chuveiro R$ 90, disjuntor R$ 120) · Luz & Cia Reparos · Marmita da Cida · Unhas da Lu · Costura Ana · Faxina da Rosa · Bazar da Vila · Bolos da Tê · Banho da Jô · Reforço com a Bia.
@@ -189,6 +200,9 @@ Zé Elétrica (tomada R$ 80, chuveiro R$ 90, disjuntor R$ 120) · Luz & Cia Repa
 3. **Outro visitante** busca no mapa, encontra a vitrine e chama no WhatsApp.
 
 **QR code no estande** para o público testar no próprio celular.
+
+### 8.1.1 Pedidos chegando de verdade no estande
+Com a variável `WHATSAPP_ESTANDE` na Vercel (número de um celular do grupo), os pedidos das **vitrines de exemplo** e das **vitrines sem WhatsApp próprio** abrem o WhatsApp de quem pediu, já endereçados a esse celular e marcados "[Demonstração na feira · vitrine …]". Nenhum visitante precisa expor o próprio número, e quem quiser ver o pedido chegar vê no celular do estande; alguém do grupo responde. Vitrines criadas com número próprio continuam indo para o próprio dono. Sem a variável, as vitrines de exemplo e as sem WhatsApp fazem o agendamento inteiro e mostram uma **simulação marcada como simulação**: a mensagem exatamente como chegaria ao comerciante e uma "resposta simulada".
 
 ### 8.2 Plano B
 - Vitrines de exemplo já no mapa e o modo demonstração, que funciona sem a IA.
@@ -216,7 +230,7 @@ vitrine-site/
     └── _supabase.js      ← peças comuns
 ```
 
-Serviços: **GitHub** (código) → **Vercel Hobby** (site + funções, grátis) → **Anthropic** (Claude Sonnet) → **Supabase** (grátis, banco e fotos, para as vitrines aparecerem em todos os celulares e no telão). Só o servidor da Vercel acessa o banco; o navegador nunca vê as chaves. Variáveis: `ANTHROPIC_API_KEY`, `SUPABASE_URL`, `SUPABASE_SECRET_KEY`, `MODERACAO_SENHA`.
+Serviços: **GitHub** (código) → **Vercel Hobby** (site + funções, grátis) → **Anthropic** (Claude Sonnet) → **Supabase** (grátis, banco e fotos, para as vitrines aparecerem em todos os celulares e no telão). Só o servidor da Vercel acessa o banco; o navegador nunca vê as chaves. Variáveis: `ANTHROPIC_API_KEY`, `SUPABASE_URL`, `SUPABASE_SECRET_KEY`, `MODERACAO_SENHA` e, para o login com Google, `SUPABASE_PUBLISHABLE_KEY` (passo a passo no LEIA-ME).
 
 ### 9.2 IA: um modelo multimodal
 O **Claude Sonnet 5.5** (`claude-sonnet-5-5`) lê o texto da foto (OCR) e entende a imagem **na mesma chamada**, e devolve um JSON:
@@ -269,7 +283,7 @@ Preço do Sonnet 5.5: US$ 2 por milhão de tokens de entrada e US$ 10 de saída.
 
 **Se atrasar, cortar nesta ordem:** avaliações → telão ao vivo entre celulares → busca refinada. O que não pode faltar: foto → vitrine → WhatsApp.
 
-**Depois da feira:** busca por foto (CLIP), login, plano Pro com posts semanais e pagamento, Destaque, PWA (instalar pela tela inicial), termos de uso e LGPD.
+**Depois da feira:** busca por foto (CLIP), login obrigatório para editar vitrines, planos Pro e Premium com cobrança de verdade, chatbot dentro do WhatsApp, PWA (instalar pela tela inicial), termos de uso e LGPD.
 
 ---
 
@@ -284,7 +298,7 @@ Em andamento com comerciantes do entorno da UFABC. Pedir **fotos reais** (cardá
 - [ ] Ligar o Supabase (SQL + três variáveis na Vercel) e testar com dois celulares.
 - [ ] Testar a IA com as fotos das entrevistas e ajustar as instruções.
 - [ ] Trocar os depoimentos fictícios por falas reais (com autorização).
-- [ ] Definir os preços do Pro e do Destaque (hoje R$ 29 e R$ 15 são exemplos).
+- [x] Preços definidos: Básico grátis, Pro R$ 14,90 e Premium R$ 49,90 (24/11).
 - [ ] Definir o recorte do mapa da demo em volta do campus de Santo André.
 - [ ] Revisar os números da seção 2.4 perto da feira.
 - [ ] Dividir as tarefas do cronograma entre o grupo.
@@ -296,7 +310,7 @@ Em andamento com comerciantes do entorno da UFABC. Pedir **fotos reais** (cardá
 | Escopo | O que entra |
 |---|---|
 | **Marketing** | A identidade visual do Vitrine e os posts gerados são o próprio produto |
-| **Financeiro** | Precificação do plano Pro e do Destaque no bairro |
+| **Financeiro** | Precificação dos planos (Básico grátis, Pro R$ 14,90, Premium R$ 49,90) |
 
 ---
 
