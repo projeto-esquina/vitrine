@@ -569,6 +569,100 @@ footer .wrap{padding-block:22px;display:flex;flex-wrap:wrap;justify-content:spac
 .minha{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border:1px solid var(--linha);border-radius:14px;background:var(--sup)}
 .minha b{display:block}.minha small{color:var(--texto-2);font-size:13px}
 .minha-acoes{display:flex;gap:6px}.minha-acoes .btn{padding:8px 12px;font-size:13px}
+.capa-ops{display:flex;flex-wrap:wrap;gap:10px}
+.capa-op{display:grid;gap:4px;justify-items:center;padding:4px;border-radius:14px;border:2px solid transparent;background:none;cursor:pointer;font:inherit;color:var(--texto-2)}
+.capa-op.on{border-color:var(--violeta);color:var(--texto)}
+.capa-op:focus-visible{outline:2px solid var(--violeta);outline-offset:2px}
+.capa-op .capa-mini{width:84px;height:64px;min-height:0;padding:0;margin:0;border-radius:10px;background-size:cover;background-position:center;display:block;border:1px solid var(--linha)}
+.capa-op small{font-size:12px;font-weight:600}
+.risco{border-radius:14px;padding:12px 14px;font-size:14px;display:grid;gap:4px}
+.risco:empty{display:none}
+.risco>b{font-size:15px}
+.risco small{color:inherit;opacity:.85}
+.risco.ok{background:rgba(30,158,85,.10);color:var(--texto);border:1px solid rgba(30,158,85,.35)}
+.risco.ok>b{color:var(--verde-txt)}
+.risco.medio{background:#FFF6DC;color:#4A3500;border:1px solid #E0B14A}
+.risco.alto{background:#FDECEC;color:#6B1111;border:1px solid #E5848A}
+.risco-lista{margin:6px 0 2px;padding-left:18px;display:grid;gap:6px;text-align:left}
+.risco-lista small{display:block}
+.risco-lista q{font-style:italic}
+.risco-ia{font-family:var(--f-mono);font-size:11px;padding:1px 6px;border-radius:99px;background:rgba(0,0,0,.08);white-space:nowrap}
+.ouv-ok-ic.alerta{background:#E5848A;color:#3A0A0A}
+.ouv-ok .risco-lista{background:var(--sup);border:1px solid var(--linha);border-radius:12px;padding:12px 12px 12px 28px;color:var(--texto)}
+.ag-dica{display:block;padding:8px 10px;border-radius:10px;background:#FFF6DC;color:#4A3500;font-size:14px}
+.ag-dica b,.dica-seg b{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.dica-seg{grid-column:1/-1;margin:0;padding:10px 12px;border-radius:12px;background:#FFF6DC;color:#4A3500;font-size:14px}
+.nota-lk{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-decoration:underline;text-decoration-color:var(--linha);text-underline-offset:3px}
+.nota-lk:hover{text-decoration-color:currentColor}
+.aval{grid-column:1/-1;border-top:1px solid var(--linha);padding-top:20px;margin-top:4px;scroll-margin-top:16px}
+.aval h3{margin:0 0 14px;font-size:22px;letter-spacing:-.03em}
+.aval-resumo{display:flex;flex-wrap:wrap;gap:20px 28px;align-items:center;margin-bottom:16px}
+.aval-media{display:grid;justify-items:start;gap:2px}
+.aval-media b{font-size:44px;line-height:1;letter-spacing:-.04em}
+.aval-media small{color:var(--texto-2)}
+.aval-est{color:#E0A100;letter-spacing:2px;font-size:15px}
+:root[data-tema="escuro"] .aval-est{color:#F5C979}
+.aval-barras{flex:1 1 220px;display:grid;gap:4px;min-width:0}
+.aval-barra{display:grid;grid-template-columns:34px 1fr 28px;align-items:center;gap:8px;font-size:13px;color:var(--texto-2)}
+.aval-barra i{height:8px;border-radius:99px;background:var(--sup-2);overflow:hidden}
+.aval-barra em{display:block;height:100%;background:var(--violeta);border-radius:99px}
+.aval-barra small{text-align:right}
+.aval-vazio{color:var(--texto-2)}
+.aval-lista{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:10px}
+.aval-lista li{padding:12px 14px;border:1px solid var(--linha);border-radius:14px;background:var(--sup)}
+.aval-cab{display:flex;align-items:center;gap:10px}
+.aval-cab>div{flex:1;min-width:0}
+.aval-cab b{display:block;font-size:15px}
+.aval-cab small{color:var(--texto-2);font-size:12.5px}
+.aval-av{width:34px;height:34px;border-radius:50%;background:var(--sup-2);color:var(--violeta-txt);display:grid;place-items:center;font-weight:800;font-size:13px;flex:none}
+.aval-lista p{margin:8px 0 0}
+.aval-selo{color:var(--verde-txt);font-weight:700}
+.aval-form{display:grid;gap:10px;margin-top:12px;padding:16px;border-radius:16px;background:var(--sup);border:1px solid var(--linha)}
+.aval-form input,.aval-form textarea{width:100%;min-height:42px;border-radius:10px;border:1.5px solid var(--linha);background:var(--bg);color:var(--texto);padding:10px;font:inherit;font-size:14px;resize:vertical}
+.denunciar{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:6px 2px;border:0;background:none;color:var(--texto-2);font:inherit;font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.denunciar:hover{color:var(--texto)}
+.l-conf-faixa{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:40px;padding:20px 22px;border-radius:18px;background:var(--sup);border:1px solid var(--linha)}
+.l-conf-faixa>div{flex:1 1 320px;min-width:0}
+.l-conf-faixa b{display:block;font-size:18px;margin-bottom:4px}
+.l-conf-faixa span{color:var(--texto-2)}
+.l-conf-faixa em{font-style:normal;font-weight:700;color:var(--texto)}
+.ouv-form{display:grid;gap:14px;max-width:560px}
+.ouv-form h3{margin:0;font-size:24px;letter-spacing:-.03em}
+.ouv-form fieldset{border:0;padding:0;margin:0;display:grid;gap:8px}
+.ouv-form legend{font-weight:700;margin-bottom:8px}
+.ouv-op{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1.5px solid var(--linha);border-radius:12px;background:var(--sup);cursor:pointer}
+.ouv-op:has(input:checked){border-color:var(--violeta);background:rgba(8,189,184,.08)}
+.ouv-op input{margin-top:4px;accent-color:#067A76}
+.ouv-op b{display:block;font-size:15px}.ouv-op small{color:var(--texto-2);font-size:13px}
+.ouv-tipos{display:flex;flex-wrap:wrap;gap:8px}
+.ouv-chip{position:relative}
+.ouv-chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.ouv-chip span{display:inline-block;padding:8px 14px;border-radius:99px;border:1.5px solid var(--linha);background:var(--sup);font-weight:600;font-size:14px}
+.ouv-chip input:checked+span{border-color:var(--violeta);background:rgba(8,189,184,.14)}
+.ouv-chip input:focus-visible+span{outline:2px solid var(--violeta);outline-offset:2px}
+.ouv-campo{display:grid;gap:6px;font-weight:700;font-size:14px}
+.ouv-campo small{font-weight:400;color:var(--texto-2)}
+.ouv-campo textarea,.ouv-campo input{width:100%;min-height:44px;border-radius:12px;border:1.5px solid var(--linha);background:var(--sup);color:var(--texto);padding:10px 12px;font:inherit;font-weight:400;resize:vertical}
+.erro-ouv{color:#B42318;margin:0}.erro-ouv:empty{display:none}
+:root[data-tema="escuro"] .erro-ouv{color:#FDA29B}
+.ouv-ok{display:grid;justify-items:center;text-align:center;gap:12px;padding:12px 0;max-width:460px;margin:0 auto}
+.ouv-ok-ic{width:56px;height:56px;border-radius:50%;background:var(--violeta);color:#081D1E;display:grid;place-items:center;font-size:28px;font-weight:800}
+.ouv-ok h3{margin:0;font-size:24px}
+.ouv-ok p{margin:0;color:var(--texto-2)}
+.ouv-prot{padding:12px 18px;border-radius:14px;border:1.5px dashed var(--violeta);background:var(--sup)}
+.ouv-prot small{display:block;color:var(--texto-2);font-size:12px}
+.ouv-prot b{font-family:var(--f-mono);font-size:20px;letter-spacing:.06em}
+.mod-ouv{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14)}
+.mod-ouv-cab{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.mod-ouv-cab .btn{padding:8px 12px;font-size:13px;color:var(--on-dark)}
+.ouv-resumo{display:block;margin-bottom:8px;color:var(--on-dark-2,#A3C2C2)}
+#ouv-lista{display:grid;gap:8px;max-height:420px;overflow:auto}
+.ouv-item{padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.06);border-left:3px solid #F5C979;font-size:14px}
+.ouv-item.resolvida,.ouv-item.arquivada{opacity:.6;border-left-color:rgba(255,255,255,.3)}
+.ouv-item-cab b{display:block}.ouv-item-cab span{font-family:var(--f-mono);font-size:11.5px;color:var(--on-dark-2,#A3C2C2)}
+.ouv-item p{margin:6px 0}.ouv-item small{display:block;color:var(--on-dark-2,#A3C2C2)}
+.ouv-item-acoes{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.ouv-item-acoes .btn{padding:6px 10px;font-size:12.5px;color:var(--on-dark)}
 .vit-acoes{display:flex;flex-wrap:wrap;gap:8px}
 .vit-acoes .btn{flex:1 1 200px;justify-content:center}
 .btn-agenda{background:var(--sup);color:var(--texto);box-shadow:inset 0 0 0 1.5px var(--linha);gap:8px}
@@ -1040,6 +1134,10 @@ details.l-q p{color:var(--texto-2);padding-bottom:20px;max-width:62ch}
         <div class="l-conf-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><h3>Conversa direta</h3><p>O contato vai direto pro WhatsApp de quem faz, sem intermediário.</p></div>
       </div>
     </div>
+    <div class="l-conf-faixa">
+      <div><b>Viu algo errado?</b><span>Toda vitrine tem o botão <em>Denunciar</em>. Com 3 denúncias de pessoas diferentes, ela sai do mapa até a nossa análise. Reclamações, sugestões e pedidos sobre seus dados vão para a Ouvidoria, sempre com número de protocolo.</span></div>
+      <button type="button" class="btn btn-fantasma" data-ouvidoria>Falar com a Ouvidoria</button>
+    </div>
   </div></div>
 
   <!-- Depoimento -->
@@ -1082,6 +1180,7 @@ details.l-q p{color:var(--texto-2);padding-bottom:20px;max-width:62ch}
       <details class="l-q"><summary>Meu endereço aparece no mapa?</summary><p>Não. O mapa mostra só a região aproximada onde você atende.</p></details>
       <details class="l-q"><summary>Como o morador entra em contato?</summary><p>Pelo botão “Chamar no WhatsApp”, que abre a conversa com uma mensagem pronta. A combinação é direta entre vocês, e depois o vizinho pode deixar uma avaliação.</p></details>
       <details class="l-q"><summary>Onde o Vitrine começa?</summary><p>Na região do campus da UFABC em Santo André. A ideia é dominar um bairro e expandir bairro por bairro.</p></details>
+      <details class="l-q"><summary>Como denunciar uma vitrine ou falar com a Ouvidoria?</summary><p>Em cada vitrine há o botão “Denunciar esta vitrine”: escolha o motivo (golpe, conteúdo impróprio, informação enganosa, produto ilegal, dados de outra pessoa) e, se quiser, explique. A denúncia é anônima para o comerciante. Com 3 denúncias de pessoas diferentes, a vitrine sai do mapa até a análise da equipe. Para reclamações, sugestões, elogios ou pedidos sobre seus dados pessoais, use a <button type="button" class="link-btn" data-ouvidoria>Ouvidoria</button>. Toda mensagem recebe um número de protocolo.</p></details>
       <details class="l-q"><summary>Quem pode criar uma vitrine?</summary><p>Qualquer comerciante ou autônomo do bairro: marmita, manicure, eletricista, diarista, costureira, brechó, aulas particulares e muito mais.</p></details>
     </div>
   </div></div>
@@ -1104,7 +1203,7 @@ details.l-q p{color:var(--texto-2);padding-bottom:20px;max-width:62ch}
     <div class="l-rodape-top">
       <div><span class="logo" data-logo></span><p class="marca">O comércio local nunca teve tanta visibilidade.</p></div>
       <div><h4>Navegação</h4><ul><li><button class="lk" data-ir="como-funciona">Como funciona</button></li><li><button class="lk" data-ir="por-que">Por que funciona</button></li><li><button class="lk" data-ir="planos">Planos</button></li><li><button class="lk" data-ir="feira">Na feira</button></li><li><button class="lk" data-ir="duvidas">Perguntas frequentes</button></li></ul></div>
-      <div><h4>Produto</h4><ul><li><a href="#mapa">Mapa do bairro</a></li><li><a href="#criar">Criar minha vitrine</a></li><li><a href="#telao">Telão da feira</a></li><li><a href="#painel">Painel Pro (exemplo)</a></li></ul></div>
+      <div><h4>Produto</h4><ul><li><a href="#mapa">Mapa do bairro</a></li><li><a href="#criar">Criar minha vitrine</a></li><li><a href="#telao">Telão da feira</a></li><li><a href="#painel">Painel Pro (exemplo)</a></li><li><button class="lk" data-ouvidoria>Ouvidoria e denúncias</button></li></ul></div>
     </div>
     <div class="l-rodape-base"><span>Protótipo · UFABC · ESMA002-23 Inovações para Engenharia · Feira EI2026</span><button class="lk" data-ir="topo" style="font-size:12px">Voltar ao topo ↑</button></div>
   </div></footer>
@@ -1216,6 +1315,8 @@ details.l-q p{color:var(--texto-2);padding-bottom:20px;max-width:62ch}
         <div class="card ajustes">
           <span class="rotulo">Ajustar antes de publicar</span>
           <div class="lido" id="texto-lido" hidden><b>Lido na foto</b><q id="texto-lido-q"></q></div>
+          <div class="campo" id="capa-campo" hidden><span class="rotulo">Foto de capa da vitrine</span><div class="capa-ops" id="capa-ops" role="radiogroup" aria-label="Foto de capa"></div><small class="dica" id="capa-dica"></small></div>
+          <div class="risco" id="risco-painel" aria-live="polite"></div>
           <div class="campo"><label for="ed-nome">Nome</label><input id="ed-nome"></div>
           <div class="campo"><label for="ed-desc">Descrição</label><textarea id="ed-desc" style="min-height:80px"></textarea></div>
           <div class="campo"><span class="rotulo">Catálogo · nome e preço (R$)</span><div class="itens-ed" id="itens-ed"></div><button class="link-btn" id="add-item">+ Adicionar item</button></div>
@@ -1266,7 +1367,7 @@ details.l-q p{color:var(--texto-2);padding-bottom:20px;max-width:62ch}
         <div class="telao-cta"><small>Teste em um minuto</small>Fotografe 3 objetos do estande e veja a sua vitrine surgir aqui, ao vivo.</div>
         <div class="telao-qr"><div class="l-qr" data-qr></div><div><b>Crie a sua agora</b><small>Aponte a câmera do celular para o código.</small><button type="button" class="lk" id="qr-trocar">Trocar o link do código</button> <button type="button" class="lk" id="mod-abrir" style="margin-left:12px" hidden>Moderar vitrines</button></div></div>
         <div class="qr-editor" id="qr-editor" hidden><label for="qr-link">Link que o código abre</label><input id="qr-link" type="url" placeholder="https://…"><button type="button" class="btn btn-agua" id="qr-salvar">Salvar link</button></div>
-        <div class="qr-editor" id="mod-painel" hidden><label for="mod-senha">Senha de moderação do grupo</label><input id="mod-senha" type="password" autocomplete="off" placeholder="A mesma da variável MODERACAO_SENHA"><div class="mod-lista" id="mod-lista"></div></div>
+        <div class="qr-editor" id="mod-painel" hidden><label for="mod-senha">Senha de moderação do grupo</label><input id="mod-senha" type="password" autocomplete="off" placeholder="A mesma da variável MODERACAO_SENHA"><div class="mod-lista" id="mod-lista"></div><div class="mod-ouv"><div class="mod-ouv-cab"><b>Denúncias e ouvidoria</b><button type="button" class="btn btn-fantasma" id="ouv-carregar">Carregar</button></div><div id="ouv-lista"></div></div></div>
         <div class="feed" id="feed"></div>
       </div>
     </div>
@@ -1433,7 +1534,7 @@ function renderResultados(){
   r.innerHTML=lista.map(v=>`<div class="res${v.id===sel?" sel":""}" data-id="${esc(v.id)}" role="button" tabindex="0">
     <span class="av">${esc(iniciais(v.nome))}</span>
     <div style="min-width:0"><div class="nome">${esc(v.nome)}</div><div class="linha">${esc(CATS[v.cat].r)} · a partir de ${brl(precoMin(v))}</div>
-    <div class="meta">${v.nota?`<span>★ ${v.nota.toFixed(1).replace(".",",")}</span><span>${v.viz} vizinhos</span>`:`<span>novo no bairro</span>`}<span>${fmtDist(dist(v))}</span>${v.hoje?`<span class="hoje">atende hoje</span>`:""}</div></div>
+    <div class="meta">${v.nota?`<button type="button" class="nota-lk" data-ver-aval="${esc(v.id)}" aria-label="Ver avaliações: nota ${v.nota.toFixed(1).replace(".",",")}, ${v.viz} vizinhos">★ ${v.nota.toFixed(1).replace(".",",")} · ${v.viz} vizinhos</button>`:`<span>novo no bairro</span>`}<span>${fmtDist(dist(v))}</span>${v.hoje?`<span class="hoje">atende hoje</span>`:""}</div></div>
     <div class="acoes"><button class="btn btn-verde" data-zap="${esc(v.id)}">${icZap}Chamar no WhatsApp</button><button class="btn btn-agenda" data-agendar="${esc(v.id)}" aria-label="Agendar horário">${icAgenda}Agendar</button><button class="btn btn-fantasma" data-ver="${esc(v.id)}">Ver vitrine</button></div>
   </div>`).join("");
 }
@@ -1446,10 +1547,11 @@ function vitrineHTML(v,{selo=""}={}){
     <div class="vit-av">${esc(iniciais(v.nome))}</div>
     <h3>${esc(v.nome)}</h3>
     <div class="vit-cat">${esc(CATS[v.cat].r)} · ${esc(v.regiao)}</div>
-    <div class="vit-meta">${v.nota?`<span>★ ${v.nota.toFixed(1).replace(".",",")} · ${v.viz} vizinhos</span>`:`<span>novo no bairro</span>`}<span>${fmtDist(dist(v))} de você</span>${v.hoje?`<span style="color:var(--verde-txt);font-weight:700">atende hoje</span>`:""}</div>
+    <div class="vit-meta">${v.nota?`<a href="#aval" class="nota-lk" data-ir-aval>★ ${v.nota.toFixed(1).replace(".",",")} · ${v.viz} vizinhos</a>`:`<span>novo no bairro</span>`}<span>${fmtDist(dist(v))} de você</span>${v.hoje?`<span style="color:var(--verde-txt);font-weight:700">atende hoje</span>`:""}</div>
     <p class="vit-desc">${esc(v.desc)}</p>
     <ul class="catalogo">${v.itens.map(i=>`<li><span>${esc(i.nome)}</span><span>a partir de ${brl(i.preco)}</span></li>`).join("")}</ul>
     <div class="vit-acoes"><button class="btn btn-verde" data-zap="${esc(v.id)}">${icZap}Chamar no WhatsApp</button><button class="btn btn-agenda" data-agendar="${esc(v.id)}">${icAgenda}Agendar horário</button></div>
+    <button type="button" class="denunciar" data-denunciar="${esc(v.id)}">${icBandeira}Denunciar esta vitrine</button>
   </div></article>`;
 }
 
@@ -1462,11 +1564,14 @@ sheet.addEventListener("click",e=>{if(e.target===sheet)fecharSheet()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!sheet.hidden)fecharSheet()});
 const porId=id=>todas().find(v=>v.id===id);
 
-function verVitrine(id){
+function verVitrine(id,opcoes){
   const v=porId(id);if(!v)return;
   abrirSheet(`<div class="sheet-grid">${vitrineHTML(v,{selo:v.exemplo?'<span class="selo">exemplo</span>':(recente(v)?'<span class="selo">acabou de entrar</span>':"")})}
-    <div class="story-caixa"><span class="rotulo">Story deste negócio</span><canvas id="story-sheet" width="1080" height="1920" style="max-width:220px"></canvas></div></div>`);
+    <div class="story-caixa"><span class="rotulo">Story deste negócio</span><canvas id="story-sheet" width="1080" height="1920" style="max-width:220px"></canvas></div>
+    <section class="aval" id="aval" aria-labelledby="aval-tit"><h3 id="aval-tit">Avaliações dos vizinhos</h3><div id="aval-corpo"><p class="dica">Carregando…</p></div></section></div>`);
   desenharStory($("#story-sheet"),v);
+  carregarAvaliacoes(v);
+  if(opcoes&&opcoes.avaliacoes)setTimeout(()=>$("#aval")?.scrollIntoView({behavior:"smooth",block:"start"}),250);
 }
 let ZAP_ESTANDE=null;
 function destinoZap(v){
@@ -1526,7 +1631,7 @@ function diasAgenda(v){
 }
 let agenda=null;
 function agendar(id){
-  const v=porId(id);if(!v)return;
+  const v=porId(id);if(!v)return;marcarContato(id);
   const passos=[
     {k:"Serviço",q:`Oi! Sou o assistente de agendamento de ${v.nome}. Qual serviço você quer?`,op:[...v.itens.map(i=>`${i.nome} · a partir de ${brl(i.preco)}`),"Outro / orçamento"]},
     {k:"Dia",q:"Pra qual dia?",op:diasAgenda(v)},
@@ -1566,6 +1671,7 @@ function agResumo(){
   const pn=v.nome.split(/[\s&]/)[0];
   const texto=`Oi, ${pn}! Te achei no app Vitrine e queria agendar:\n${linhas.slice(0,-1).map(l=>"• "+l).join("\n")}\nMeu nome é ${nomeCli}.`;
   const d=destinoZap(v),real=!!d;
+  agBot(`<span class="ag-dica"><b>Dica de segurança</b>${esc(dicaSeguranca(v))}</span>`);
   agBot(`Prontinho, ${esc(nomeCli)}! Este é o seu pedido:<span class="ag-resumo">${linhas.slice(0,3).map(l=>esc(l)).join("<br>")}</span>`);
   const r=$("#ag-resp");
   if(real){
@@ -1768,7 +1874,7 @@ $("#btn-criar").onclick=()=>{
   $("#criar-erro").textContent="";
   const g=gerarVitrine(frase,$("#nome").value);
   const pos=pick||{x:Math.round(380+Math.random()*300),y:Math.round(140+Math.random()*120)};
-  rascunho={id:"v"+Date.now().toString(36),...g,x:pos.x,y:pos.y,zap:$("#zap").value.trim(),foto:fotos[0]||null,nota:null,viz:0,exemplo:false,criadaEm:Date.now()};
+  rascunho={id:"v"+Date.now().toString(36),...g,frase,x:pos.x,y:pos.y,zap:$("#zap").value.trim(),foto:null,nota:null,viz:0,exemplo:false,criadaEm:Date.now()};
   rascunho.storyTit=tituloStory(rascunho);
   animarGeracao();
 };
@@ -1784,6 +1890,7 @@ function animarGeracao(){
 function mostrarResultado(){
   mostrarEtapa(etR);
   $("#ed-nome").value=rascunho.nome;$("#ed-desc").value=rascunho.desc;
+  renderCapaOps();
   if(!rascunho.perguntas||!rascunho.perguntas.length)rascunho.perguntas=perguntasDe(rascunho).slice();
   $("#perg-ed").innerHTML=[0,1,2].map(i=>`<input type="text" data-p="${i}" maxlength="90" placeholder="Pergunta ${i+1} (opcional)" value="${esc(rascunho.perguntas[i]||"")}">`).join("");
   renderItensEd();atualizarPrevia();
@@ -1793,7 +1900,9 @@ function renderItensEd(){
 }
 let tPrev;
 function atualizarPrevia(){
+  atualizarRisco();
   $("#prev-vitrine").innerHTML=vitrineHTML(rascunho,{selo:'<span class="selo">feito pela IA em segundos</span>'});
+  $("#prev-vitrine .denunciar")?.remove();
   clearTimeout(tPrev);tPrev=setTimeout(()=>{desenharStory($("#story"),rascunho);desenharPost($("#post"),rascunho)},120);
 }
 $("#ed-nome").addEventListener("input",e=>{rascunho.nome=e.target.value||"Sem nome";atualizarPrevia()});
@@ -1803,10 +1912,23 @@ $("#itens-ed").addEventListener("input",e=>{const t=e.target;if(t.dataset.i==nul
 $("#itens-ed").addEventListener("click",e=>{const d=e.target.closest("[data-del]");if(!d||rascunho.itens.length<=1)return;rascunho.itens.splice(+d.dataset.del,1);renderItensEd();atualizarPrevia()});
 $("#add-item").onclick=()=>{rascunho.itens.push({nome:"Novo item",preco:precoMin(rascunho)});renderItensEd();atualizarPrevia()};
 $("#btn-refazer").onclick=()=>mostrarEtapa(etF);
-$("#btn-publicar").onclick=()=>{
+$("#btn-publicar").onclick=async()=>{
   const v={...rascunho,itens:rascunho.itens.filter(i=>i.nome.trim()&&i.preco>0)};
   if(!v.itens.length)v.itens=[{nome:"Serviço",preco:30}];
   v.criadaEm=Date.now();
+  const risco=riscoDe(v);
+  if(risco.nivel==="alto"){
+    const btn=$("#btn-publicar");btn.disabled=true;
+    const res=await publicarNoServidor(v);btn.disabled=false;
+    fotos=[];pick=null;rascunho=null;$("#frase").value="";$("#nome").value="";$("#zap").value="";renderFotos();desenharPick();mostrarEtapa(etF);
+    abrirSheet(`<div class="ouv-ok"><span class="ouv-ok-ic alerta" aria-hidden="true">!</span><h3>Vitrine enviada para análise</h3>
+      <p>A checagem de segurança encontrou sinais parecidos com golpes conhecidos. A vitrine só entra no mapa depois que a equipe analisar.</p>
+      <ul class="risco-lista">${risco.motivos.map(m=>`<li><b>${esc(m.titulo)}</b>${m.trecho?` <q>${esc(m.trecho)}</q>`:""}</li>`).join("")}</ul>
+      ${res&&res.protocolo?`<div class="ouv-prot"><small>Número de protocolo</small><b>${esc(res.protocolo)}</b></div>`:`<p class="aviso-sim">Demonstração: sem o servidor, a vitrine não foi enviada.</p>`}
+      <p class="dica">Se foi um engano, ajuste o texto e crie de novo, ou fale com a <button type="button" class="link-btn" data-ouvidoria>Ouvidoria</button>.</p>
+      <button type="button" class="btn btn-agua" data-fechar-sheet>Entendi</button></div>`);
+    return;
+  }
   criadas.push(v);ultimaCaida=v.id;publicarNoServidor(v);
   fotos=[];pick=null;rascunho=null;$("#frase").value="";$("#nome").value="";$("#zap").value="";renderFotos();desenharPick();mostrarEtapa(etF);
   qEl.value="";filtro=interpretar("");sel=v.id;
@@ -1840,8 +1962,10 @@ async function publicarNoServidor(v){
     if(r.status===404||r.status===503){servidorVitrines=false;return}
     if(!r.ok){toast("A vitrine ficou só neste celular por enquanto: o servidor não respondeu.");return}
     const j=await r.json();
+    if(j.em_analise){const i=criadas.findIndex(c=>c.id===v.id);if(i>=0){criadas.splice(i,1);renderTudo();renderFeed();toast("A vitrine foi para análise antes de entrar no mapa.")}return j}
     v.remota=true;if(j.foto_url)v.foto=j.foto_url;if(j.conta)v.minha=true;
     try{const m=JSON.parse(localStorage.getItem("vitrine-minhas")||"{}");m[v.id]=j.token;localStorage.setItem("vitrine-minhas",JSON.stringify(m))}catch(e){}
+    return j;
   }catch(e){}
 }
 function vitrineRemota(x){
@@ -1855,7 +1979,7 @@ function vitrineRemota(x){
     x:num(d.x,0,W,500),y:num(d.y,0,H,320),zap:String(d.zap||"").replace(/\D/g,"").slice(0,15),hoje:d.hoje===true,
     storyTit:d.storyTit?txt(d.storyTit,40):null,storySub:d.storySub?txt(d.storySub,60):null,
     perguntas:(Array.isArray(d.perguntas)?d.perguntas:[]).map(p=>txt(p,90)).filter(Boolean).slice(0,3),
-    foto,nota:null,viz:0,exemplo:false,remota:true,criadaEm:Date.parse(x.criada_em)||Date.now()};
+    foto,nota:typeof x.nota==="number"?x.nota:null,viz:Number(x.viz)||0,exemplo:false,remota:true,criadaEm:Date.parse(x.criada_em)||Date.now()};
 }
 let sincronizando=false;
 async function carregarRemotas(){
@@ -1870,7 +1994,7 @@ async function carregarRemotas(){
     const ids=new Set(j.vitrines.map(x=>x&&x.id));let mudou=false,novo=null;
     for(let i=criadas.length-1;i>=0;i--){const c=criadas[i];if(c.remota&&!ids.has(c.id)&&Date.now()-c.criadaEm>60000){criadas.splice(i,1);mudou=true}}
     for(const x of j.vitrines){
-      const ex=criadas.find(c=>c.id===(x&&x.id));if(ex){ex.remota=true;continue}
+      const ex=criadas.find(c=>c.id===(x&&x.id));if(ex){ex.remota=true;if(typeof x.nota==="number"&&(ex.nota!==x.nota||ex.viz!==x.viz)){ex.nota=x.nota;ex.viz=Number(x.viz)||0;mudou=true}continue}
       const v=vitrineRemota(x);if(!v)continue;
       criadas.push(v);mudou=true;if(!novo||v.criadaEm>novo.criadaEm)novo=v;
     }
@@ -1989,6 +2113,309 @@ document.addEventListener("click",async e=>{
     }catch(err){toast("Sem conexão com o servidor.");tm.disabled=false}
   }
 });
+/* ---------- Denúncias e ouvidoria ----------
+   Hospedado (Vercel + Supabase): vai para a tabela "manifestacoes", com protocolo.
+   Sem servidor: fica só neste navegador, marcado como demonstração. */
+const icBandeira='<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>';
+const MOTIVOS_DEN=[["golpe","Golpe ou fraude","Pede pagamento adiantado, some depois, se passa por outra pessoa…"],["improprio","Conteúdo impróprio ou ofensivo","Foto ou texto ofensivo, discriminatório ou adulto"],["enganoso","Informação enganosa","Preço, serviço ou foto que não correspondem à realidade"],["ilegal","Produto ou serviço ilegal","Algo que não pode ser vendido ou oferecido"],["terceiros","Dados ou foto de outra pessoa","Usa nome, foto ou contato de alguém sem permissão"],["outro","Outro motivo",""]];
+const TIPOS_OUV=[["reclamacao","Reclamação"],["sugestao","Sugestão"],["elogio","Elogio"],["dados","Meus dados (LGPD)"],["denuncia","Denúncia geral"]];
+const NOMES_TIPO={denuncia:"Denúncia",reclamacao:"Reclamação",sugestao:"Sugestão",elogio:"Elogio",dados:"Meus dados (LGPD)"};
+function protocoloLocal(){const d=new Date();const p=n=>String(n).padStart(2,"0");return `VT-${String(d.getFullYear()).slice(2)}${p(d.getMonth()+1)}${p(d.getDate())}-${Math.random().toString(36).slice(2,7).toUpperCase()}`}
+async function enviarManifestacao(dados){
+  if(servidorVitrines){
+    try{
+      const r=await fetch("/api/denunciar",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(dados)});
+      if(r.ok){const j=await r.json();return {ok:true,protocolo:j.protocolo,ocultada:!!j.ocultada,real:true}}
+      if(r.status===429)return {ok:false,erro:"Muitas mensagens seguidas. Tente de novo em alguns minutos."};
+      if(r.status===400){const j=await r.json().catch(()=>({}));return {ok:false,erro:j.erro||"Confira os campos."}}
+      if(r.status!==404&&r.status!==503)return {ok:false,erro:"Não deu para enviar agora. Tente de novo."};
+    }catch(e){return {ok:false,erro:"Sem conexão com o servidor."}}
+  }
+  const prot=protocoloLocal();
+  try{const l=JSON.parse(localStorage.getItem("vitrine-ouvidoria")||"[]");l.push({...dados,protocolo:prot,em:Date.now()});localStorage.setItem("vitrine-ouvidoria",JSON.stringify(l.slice(-30)))}catch(e){}
+  return {ok:true,protocolo:prot,ocultada:false,real:false};
+}
+function telaProtocolo(res,titulo,texto){
+  return `<div class="ouv-ok"><span class="ouv-ok-ic" aria-hidden="true">✓</span><h3>${esc(titulo)}</h3><p>${texto}</p>
+    <div class="ouv-prot"><small>Número de protocolo</small><b>${esc(res.protocolo)}</b></div>
+    ${res.real?"":`<p class="aviso-sim">Demonstração: sem o servidor, a mensagem fica só neste navegador.</p>`}
+    <button type="button" class="btn btn-agua" data-fechar-sheet>Fechar</button></div>`;
+}
+function denunciar(id){
+  const v=porId(id);if(!v)return;
+  abrirSheet(`<div class="sheet-grid"><form class="ouv-form" id="den-form">
+    <span class="rotulo">Denunciar vitrine</span>
+    <h3>${esc(v.nome)}</h3>
+    <fieldset><legend>Qual é o problema?</legend>${MOTIVOS_DEN.map(([k,t,d],i)=>`<label class="ouv-op"><input type="radio" name="motivo" value="${k}" ${i===0?"required":""}><span><b>${t}</b>${d?`<small>${d}</small>`:""}</span></label>`).join("")}</fieldset>
+    <label class="ouv-campo">Conte o que aconteceu <small>(opcional)</small><textarea name="mensagem" maxlength="1000" rows="3" placeholder="Ex.: paguei o sinal e a pessoa parou de responder."></textarea></label>
+    <label class="ouv-campo">Contato para retorno <small>(opcional: e-mail ou WhatsApp)</small><input name="contato" maxlength="120" autocomplete="email"></label>
+    <p class="dica">A denúncia é anônima para o comerciante. Com 3 denúncias de pessoas diferentes, a vitrine sai do mapa até a análise da equipe. Em caso de crime ou perigo imediato, procure também a polícia (190).</p>
+    <p class="dica erro-ouv" id="den-erro" role="alert"></p>
+    <button type="submit" class="btn btn-agua">Enviar denúncia</button>
+  </form></div>`);
+  $("#den-form").onsubmit=async ev=>{
+    ev.preventDefault();const f=ev.target,btn=f.querySelector("[type=submit]");
+    btn.disabled=true;btn.textContent="Enviando…";
+    const res=await enviarManifestacao({tipo:"denuncia",vitrine_id:v.exemplo?null:v.id,motivo:f.motivo.value,mensagem:f.mensagem.value,contato:f.contato.value});
+    if(!res.ok){$("#den-erro").textContent=res.erro;btn.disabled=false;btn.textContent="Enviar denúncia";return}
+    if(res.ocultada){const i=criadas.findIndex(c=>c.id===v.id);if(i>=0)criadas.splice(i,1);if(sel===v.id)sel=null;renderTudo();renderFeed()}
+    sheetCorpo.innerHTML=telaProtocolo(res,"Denúncia recebida",res.ocultada?"Obrigado. Esta vitrine recebeu denúncias de várias pessoas e <b>saiu do mapa</b> até a análise da equipe.":"Obrigado por avisar. A equipe vai analisar e, se for o caso, tirar a vitrine do mapa.");
+  };
+}
+function abrirOuvidoria(tipo){
+  abrirSheet(`<div class="sheet-grid"><form class="ouv-form" id="ouv-form">
+    <span class="rotulo">Ouvidoria do Vitrine</span>
+    <h3>Fale com a gente</h3>
+    <p class="dica" style="margin:0">Reclamações, sugestões, elogios e pedidos sobre seus dados pessoais. Para denunciar uma vitrine específica, use o botão “Denunciar” dentro dela.</p>
+    <fieldset><legend>Sobre o quê?</legend><div class="ouv-tipos">${TIPOS_OUV.map(([k,t])=>`<label class="ouv-chip"><input type="radio" name="tipo" value="${k}" ${k===(tipo||"reclamacao")?"checked":""}><span>${t}</span></label>`).join("")}</div></fieldset>
+    <label class="ouv-campo">Sua mensagem<textarea name="mensagem" maxlength="1000" rows="4" required placeholder="Conte com detalhes. Se for sobre seus dados, diga o que quer: ver, corrigir ou apagar."></textarea></label>
+    <label class="ouv-campo">Contato para retorno <small>(opcional: e-mail ou WhatsApp)</small><input name="contato" maxlength="120" autocomplete="email"></label>
+    <p class="dica">Sem contato, a mensagem é anônima, e não conseguimos responder. Guarde o número de protocolo.</p>
+    <p class="dica erro-ouv" id="ouv-erro" role="alert"></p>
+    <button type="submit" class="btn btn-agua">Enviar para a Ouvidoria</button>
+  </form></div>`);
+  $("#ouv-form").onsubmit=async ev=>{
+    ev.preventDefault();const f=ev.target,btn=f.querySelector("[type=submit]");
+    if(f.mensagem.value.trim().length<5){$("#ouv-erro").textContent="Escreva a sua mensagem.";return}
+    btn.disabled=true;btn.textContent="Enviando…";
+    const res=await enviarManifestacao({tipo:f.tipo.value,motivo:f.tipo.value==="denuncia"?"outro":null,mensagem:f.mensagem.value,contato:f.contato.value});
+    if(!res.ok){$("#ouv-erro").textContent=res.erro;btn.disabled=false;btn.textContent="Enviar para a Ouvidoria";return}
+    sheetCorpo.innerHTML=telaProtocolo(res,"Mensagem recebida","Obrigado! A equipe responde pelo contato informado, quando houver. Pedidos sobre dados pessoais são atendidos em até 15 dias.");
+  };
+}
+document.addEventListener("click",e=>{
+  const d=e.target.closest("[data-denunciar]");if(d){e.preventDefault();e.stopPropagation();denunciar(d.dataset.denunciar);return}
+  const o=e.target.closest("[data-ouvidoria]");if(o){e.preventDefault();abrirOuvidoria(o.dataset.ouvidoria||"");return}
+});
+
+// Painel do grupo (telão → Moderar vitrines)
+const NOMES_MOTIVO=Object.fromEntries(MOTIVOS_DEN.map(([k,t])=>[k,t]));
+async function carregarOuvidoria(){
+  const el=$("#ouv-lista"),senha=$("#mod-senha").value;
+  if(!senha){toast("Digite a senha de moderação primeiro.");$("#mod-senha").focus();return}
+  el.innerHTML=`<small>Carregando…</small>`;
+  try{
+    const r=await fetch("/api/ouvidoria",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({senha,acao:"listar"})});
+    if(r.status===401){el.innerHTML="";toast("Senha de moderação errada.");return}
+    if(!r.ok){el.innerHTML=`<small>Não deu para carregar agora.</small>`;return}
+    const {itens}=await r.json();
+    const abertas=itens.filter(m=>m.status==="aberta").length;
+    el.innerHTML=`<small class="ouv-resumo">${abertas} aberta${abertas===1?"":"s"} · ${itens.length} no total</small>`+(itens.length?itens.map(m=>`<div class="ouv-item ${m.status}">
+      <div class="ouv-item-cab"><b>${esc(NOMES_TIPO[m.tipo]||m.tipo)}${m.motivo?" · "+esc(NOMES_MOTIVO[m.motivo]||m.motivo):""}</b><span>${esc(m.protocolo)} · ${new Date(m.criada_em).toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})} · ${esc(m.status)}</span></div>
+      ${m.vitrine_id?`<small>Vitrine: <b>${esc(m.vitrine_nome||m.vitrine_id)}</b>${m.vitrine_oculta?" (fora do mapa)":""}</small>`:""}
+      ${m.mensagem?`<p>${esc(m.mensagem)}</p>`:""}${m.contato?`<small>Contato: ${esc(m.contato)}</small>`:""}
+      <div class="ouv-item-acoes">${m.status==="aberta"?`<button type="button" class="btn btn-fantasma" data-ouv-status="resolvida" data-ouv-id="${m.id}">Resolvida</button><button type="button" class="btn btn-fantasma" data-ouv-status="arquivada" data-ouv-id="${m.id}">Arquivar</button>`:`<button type="button" class="btn btn-fantasma" data-ouv-status="aberta" data-ouv-id="${m.id}">Reabrir</button>`}${m.vitrine_id&&m.vitrine_oculta?`<button type="button" class="btn btn-fantasma" data-ouv-restaurar="${esc(m.vitrine_id)}">Devolver ao mapa</button>`:""}</div>
+    </div>`).join(""):`<small>Nenhuma manifestação ainda.</small>`);
+  }catch(e){el.innerHTML=`<small>Sem conexão com o servidor.</small>`}
+}
+$("#ouv-carregar").onclick=carregarOuvidoria;
+$("#ouv-lista").addEventListener("click",async e=>{
+  const b=e.target.closest("[data-ouv-status],[data-ouv-restaurar]");if(!b)return;
+  const senha=$("#mod-senha").value;b.disabled=true;
+  const corpoPedido=b.dataset.ouvRestaurar?{senha,acao:"restaurar",vitrine_id:b.dataset.ouvRestaurar}:{senha,acao:"resolver",id:Number(b.dataset.ouvId),status:b.dataset.ouvStatus};
+  try{
+    const r=await fetch("/api/ouvidoria",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(corpoPedido)});
+    if(!r.ok){toast("Não deu para salvar agora.");b.disabled=false;return}
+    toast(b.dataset.ouvRestaurar?"Vitrine devolvida ao mapa.":"Manifestação atualizada.");
+    carregarOuvidoria();if(b.dataset.ouvRestaurar)carregarRemotas();
+  }catch(err){toast("Sem conexão com o servidor.");b.disabled=false}
+});
+
+/* ---------- Avaliações dos vizinhos ----------
+   Vitrines do banco: /api/avaliacoes (1 avaliação por pessoa por vitrine).
+   Vitrines de exemplo e modo sem servidor: avaliações de exemplo + as deste navegador. */
+const NOMES_AVAL=["Marina","Paulo","Rose","João","Carla","Diego","Fernanda","Seu Antônio","Bia","Rafael","Dona Lúcia","Thiago","Aline","Marcos"];
+const TEXTOS_AVAL={
+  eletricista:["Chegou no horário e resolveu rápido.","Preço justo, explicou tudo antes de começar.","Trocou o chuveiro em meia hora. Recomendo!","Muito educado e deixou tudo limpo."],
+  marmita:["Comida com gosto de casa, porção caprichada.","Chegou quentinha antes do meio-dia.","O feijão é o melhor do bairro.","Preço ótimo pela quantidade."],
+  beleza:["Unha impecável e durou duas semanas.","Super cuidadosa e pontual.","Veio até minha casa, foi ótimo.","Atendimento caprichado."],
+  costura:["Barra perfeita e entregou antes do prazo.","Salvou meu vestido de festa!","Preço justo e trabalho bem feito."],
+  limpeza:["Casa brilhando, levou os produtos.","Confiável, já é a terceira vez.","Muito caprichosa nos detalhes."],
+  bazar:["Peças em ótimo estado.","Achei um casaco lindo por R$ 30.","Atendimento simpático."],
+  bolos:["Bolo lindo e delicioso, todo mundo elogiou.","Entregou no horário combinado.","O bolo de pote é viciante.","Capricho em cada detalhe."],
+  pet:["Meu cachorro voltou cheiroso e feliz.","Busca e entrega no horário.","Cuida com muito carinho."],
+  aulas:["Meu filho melhorou a nota em matemática.","Explica com muita paciência.","Aulas bem organizadas."],
+  reparos:["Resolveu o problema de primeira.","Preço justo e trabalho limpo."],
+  outros:["Atendimento ótimo, recomendo.","Fez tudo como combinado."],
+  artesanato:["Presente lindo, embalagem caprichada.","Trabalho delicado e bem feito."],
+  encanador:["Achou o vazamento rapidinho.","Preço combinado e cumprido."]
+};
+function semente(str){let h=2166136261;for(const c of str)h=Math.imul(h^c.charCodeAt(0),16777619);return ()=>((h=Math.imul(h^(h>>>15),2246822507)>>>0)/4294967296)}
+function distDe(nota,total){
+  const d=[0,0,0,0,total];let falta=Math.round((5-nota)*total);
+  for(let k=4;k>0&&falta>0;k--){while(d[4]>0&&falta>0){const passo=Math.min(falta,4-k+1);d[4]--;d[4-passo]++;falta-=passo;if(passo<4-k+1)break}}
+  return d;
+}
+function avaliacoesExemplo(v){
+  if(v._n0===undefined){v._n0=v.nota;v._v0=v.viz}
+  v={...v,nota:v._n0,viz:v._v0};
+  if(!v.nota||!v.viz)return {media:null,total:0,dist:[0,0,0,0,0],itens:[]};
+  const r=semente(v.id),textos=TEXTOS_AVAL[v.cat]||TEXTOS_AVAL.outros,dist=distDe(v.nota,v.viz);
+  const notas=[];dist.forEach((q,i)=>{for(let k=0;k<q;k++)notas.push(i+1)});
+  const itens=[],ini=Math.floor(r()*NOMES_AVAL.length);
+  for(let i=0;i<Math.min(5,v.viz,textos.length);i++){
+    const nota=notas[notas.length-1-((i*7)%notas.length)];
+    itens.push({nota,texto:nota>=4?textos[i%textos.length]:"Demorou um pouco pra responder, mas o serviço ficou bom.",autor:NOMES_AVAL[(ini+i*5)%NOMES_AVAL.length],apos_contato:r()>.35,criada_em:new Date(Date.now()-(i*5+1+Math.floor(r()*4))*86400000).toISOString(),exemplo:true});
+  }
+  return {media:v.nota,total:v.viz,dist,itens};
+}
+function avaliacoesLocais(id){try{return (JSON.parse(localStorage.getItem("vitrine-avaliacoes")||"{}")[id])||[]}catch(e){return []}}
+function guardarLocal(id,a){try{const t=JSON.parse(localStorage.getItem("vitrine-avaliacoes")||"{}");(t[id]=t[id]||[]).unshift(a);localStorage.setItem("vitrine-avaliacoes",JSON.stringify(t))}catch(e){}}
+function marcarContato(id){try{const t=JSON.parse(localStorage.getItem("vitrine-contatos")||"{}");t[id]=Date.now();localStorage.setItem("vitrine-contatos",JSON.stringify(t))}catch(e){}}
+function fezContato(id){try{return !!JSON.parse(localStorage.getItem("vitrine-contatos")||"{}")[id]}catch(e){return false}}
+function jaAvaliou(id){try{return !!JSON.parse(localStorage.getItem("vitrine-avaliei")||"{}")[id]}catch(e){return false}}
+function marcarAvaliou(id){try{const t=JSON.parse(localStorage.getItem("vitrine-avaliei")||"{}");t[id]=1;localStorage.setItem("vitrine-avaliei",JSON.stringify(t))}catch(e){}}
+function quando(iso){const d=Math.max(0,Math.round((Date.now()-Date.parse(iso))/86400000));return d===0?"hoje":d===1?"ontem":d<30?`há ${d} dias`:new Date(iso).toLocaleDateString("pt-BR")}
+const estrelasTxt=n=>"★".repeat(n)+"☆".repeat(5-n);
+
+async function dadosAvaliacoes(v){
+  if(!v.exemplo&&v.remota&&servidorVitrines){
+    try{const r=await fetch(`/api/avaliacoes?vitrine=${encodeURIComponent(v.id)}`,{cache:"no-store"});if(r.ok)return {...(await r.json()),fonte:"banco"}}catch(e){}
+  }
+  const base=v.exemplo?avaliacoesExemplo(v):{media:null,total:0,dist:[0,0,0,0,0],itens:[]};
+  const loc=avaliacoesLocais(v.id);
+  if(!loc.length)return {...base,fonte:v.exemplo?"exemplo":"local"};
+  const dist=base.dist.slice();loc.forEach(a=>dist[a.nota-1]++);
+  const total=base.total+loc.length,soma=(base.media||0)*base.total+loc.reduce((s,a)=>s+a.nota,0);
+  return {media:Math.round(soma/total*10)/10,total,dist,itens:[...loc,...base.itens],fonte:v.exemplo?"exemplo":"local"};
+}
+async function carregarAvaliacoes(v){
+  const el=$("#aval-corpo");if(!el)return;
+  const d=await dadosAvaliacoes(v);if(!$("#aval-corpo"))return;
+  const max=Math.max(1,...d.dist);
+  const resumo=d.total?`<div class="aval-resumo">
+      <div class="aval-media"><b>${d.media.toFixed(1).replace(".",",")}</b><span class="aval-est" aria-hidden="true">${estrelasTxt(Math.round(d.media))}</span><small>${d.total} avaliaç${d.total===1?"ão":"ões"}</small></div>
+      <div class="aval-barras" role="list" aria-label="Distribuição das notas">${[5,4,3,2,1].map(n=>`<div class="aval-barra" role="listitem"><span>${n} ★</span><i><em style="width:${Math.round(d.dist[n-1]/max*100)}%"></em></i><small>${d.dist[n-1]}</small></div>`).join("")}</div>
+    </div>`:`<p class="aval-vazio">Ainda sem avaliações. Seja o primeiro vizinho a avaliar!</p>`;
+  const lista=d.itens.length?`<ul class="aval-lista">${d.itens.slice(0,8).map(a=>`<li><div class="aval-cab"><span class="aval-av">${esc(iniciais(a.autor||"Vizinho"))}</span><div><b>${esc(a.autor||"Vizinho")}</b><small>${quando(a.criada_em)}${a.apos_contato?` · <span class="aval-selo">✓ contato pelo app</span>`:""}</small></div><span class="aval-est" aria-label="${a.nota} de 5">${estrelasTxt(a.nota)}</span></div>${a.texto?`<p>${esc(a.texto)}</p>`:""}</li>`).join("")}</ul>`:"";
+  const aviso=d.fonte==="exemplo"?`<p class="aviso-sim">Vitrine de exemplo: as avaliações são fictícias, para mostrar como a área funciona.</p>`:d.fonte==="local"?`<p class="aviso-sim">Sem o servidor, as avaliações ficam só neste navegador.</p>`:"";
+  const form=jaAvaliou(v.id)?`<p class="avaliado">✓ Você já avaliou esta vitrine.</p>`:`<form class="aval-form" id="aval-form">
+      <b>Avaliar ${esc(v.nome)}</b>
+      <div class="estrelas" role="radiogroup" aria-label="Nota de 1 a 5">${[1,2,3,4,5].map(n=>`<button type="button" role="radio" aria-checked="false" aria-label="${n} estrela${n>1?"s":""}" data-n="${n}">★</button>`).join("")}</div>
+      <input name="autor" maxlength="30" placeholder="Seu primeiro nome (opcional)" autocomplete="given-name">
+      <textarea name="texto" maxlength="300" rows="2" placeholder="Conte em uma frase como foi (opcional)"></textarea>
+      ${fezContato(v.id)?`<small class="aval-selo">✓ Você falou com ${esc(v.nome)} pelo app: sua avaliação aparece com esse selo.</small>`:""}
+      <p class="dica erro-ouv" id="aval-erro" role="alert"></p>
+      <button type="submit" class="btn btn-azul" disabled>Enviar avaliação</button></form>`;
+  el.innerHTML=resumo+lista+aviso+form;
+  const f=$("#aval-form");if(!f)return;
+  let nota=0;
+  f.querySelectorAll("[data-n]").forEach(b=>b.addEventListener("click",()=>{nota=+b.dataset.n;f.querySelectorAll("[data-n]").forEach(x=>{x.classList.toggle("on",+x.dataset.n<=nota);x.setAttribute("aria-checked",+x.dataset.n===nota)});f.querySelector("[type=submit]").disabled=false}));
+  f.onsubmit=async ev=>{
+    ev.preventDefault();if(!nota)return;const btn=f.querySelector("[type=submit]");btn.disabled=true;btn.textContent="Enviando…";
+    const r=await enviarAvaliacao(v,nota,f.texto.value,f.autor.value);
+    if(!r.ok){$("#aval-erro").textContent=r.erro;btn.disabled=false;btn.textContent="Enviar avaliação";return}
+    toast("Obrigado! Sua avaliação ajuda os vizinhos a escolher.");carregarAvaliacoes(v);
+  };
+}
+async function enviarAvaliacao(v,nota,texto,autor){
+  const a={nota,texto:String(texto||"").trim().slice(0,300),autor:String(autor||"").trim().slice(0,30),apos_contato:fezContato(v.id),criada_em:new Date().toISOString()};
+  if(!v.exemplo&&v.remota&&servidorVitrines){
+    try{
+      const r=await fetch("/api/avaliacoes",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({vitrine_id:v.id,...a})});
+      if(r.status===409){marcarAvaliou(v.id);return {ok:false,erro:"Você já avaliou esta vitrine."}}
+      if(r.status===429)return {ok:false,erro:"Muitas avaliações seguidas. Tente daqui a pouco."};
+      if(r.ok){const d=await r.json();v.nota=d.media;v.viz=d.total;marcarAvaliou(v.id);renderTudo();return {ok:true}}
+      return {ok:false,erro:"Não deu para enviar agora. Tente de novo."};
+    }catch(e){return {ok:false,erro:"Sem conexão com o servidor."}}
+  }
+  if(v._n0===undefined){v._n0=v.nota;v._v0=v.viz}
+  guardarLocal(v.id,a);marcarAvaliou(v.id);
+  const total=(v.nota||0)*(v.viz||0)+nota;v.viz=(v.viz||0)+1;v.nota=Math.round(total/v.viz*10)/10;renderTudo();
+  return {ok:true};
+}
+document.addEventListener("click",e=>{
+  const a=e.target.closest("[data-ver-aval]");if(a){e.preventDefault();e.stopPropagation();verVitrine(a.dataset.verAval,{avaliacoes:true});return}
+  const b=e.target.closest("[data-ir-aval]");if(b){e.preventDefault();$("#aval")?.scrollIntoView({behavior:"smooth",block:"start"})}
+});
+
+const GOLPES={"padroes": [{"id": "pagamento_integral_antecipado", "titulo": "Pagamento integral adiantado", "explica": "Pedir o valor todo antes do serviço é o golpe mais comum em serviços: a pessoa recebe e some.", "peso": 5, "sinais": ["(100 ?%|integral|total|tudo)\\s*(adiantad|antecipad|antes)", "s[óo] (trabalho|atendo|fa[çc]o)\\s*(com|ap[óo]s|mediante)\\s*pagamento", "pag(ue|ar|amento)\\s*(antes|adiantad|antecipad)"]}, {"id": "chave_pix_na_vitrine", "titulo": "Chave Pix, CPF ou dados de pagamento na vitrine", "explica": "Colocar chave Pix ou CPF na vitrine leva o cliente a pagar fora de qualquer combinação. O pagamento se combina na conversa.", "peso": 4, "sinais": ["\\b\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d{2}\\b", "chave\\s*pix", "\\bpix\\s*:\\s*\\S+", "\\bag[êe]ncia\\b.*\\bconta\\b"]}, {"id": "link_externo", "titulo": "Link para fora do app", "explica": "Links levam a páginas falsas que imitam lojas e bancos, ou tiram a conversa de onde a comunidade enxerga.", "peso": 4, "sinais": ["https?://", "\\bwww\\.", "\\bbit\\.ly\\b", "\\b[a-z0-9-]+\\.(com|net|xyz|shop|site|online|br)\\b"]}, {"id": "outro_canal", "titulo": "Pede para falar só por outro canal", "explica": "Mandar o cliente para Telegram, direct ou outro número dificulta denúncia e rastreio.", "peso": 3, "sinais": ["s[óo]\\s*(pelo|no|por)\\s*(telegram|insta|instagram|direct|dm|outro n[úu]mero)", "\\btelegram\\b"]}, {"id": "pede_dados_sensiveis", "titulo": "Pede senha, código, cartão ou documentos", "explica": "Nenhum serviço de bairro precisa da sua senha, do código que chega por SMS ou dos dados do cartão.", "peso": 6, "sinais": ["\\bsenha\\b", "c[óo]digo (de verifica[çc][ãa]o|que chegar|do whats|sms)", "(n[úu]mero|dados) do cart[ãa]o", "envi[ae] (seu |o )?(cpf|rg|documento|foto do documento)", "\\btoken\\b"]}, {"id": "dinheiro_facil", "titulo": "Promessa de dinheiro fácil ou investimento", "explica": "Renda extra garantida, investimento com lucro certo e cotas são clássicos de pirâmide e golpe.", "peso": 5, "sinais": ["renda extra", "ganhe dinheiro", "lucro garantido", "rendimento (garantido|di[áa]rio)", "\\binvestimento\\b", "\\bpir[âa]mide\\b", "\\bcotas?\\b.*\\b(lucro|retorno)"]}, {"id": "emprestimo", "titulo": "Empréstimo ou crédito fácil", "explica": "Crédito \"sem consulta\" pedindo taxa adiantada é golpe frequente.", "peso": 5, "sinais": ["empr[ée]stimo", "cr[ée]dito (f[áa]cil|r[áa]pido|aprovado)", "sem consulta (ao )?(spc|serasa)", "nome sujo"]}, {"id": "taxa_antecipada", "titulo": "Taxa de liberação, frete ou cadastro antecipados", "explica": "Cobrar \"taxa de liberação\", \"frete antecipado\" ou \"cadastro\" para entregar algo é golpe conhecido.", "peso": 4, "sinais": ["taxa (de )?(libera[çc][ãa]o|cadastro|ades[ãa]o|reserva)", "frete (antecipad|pago antes)"]}, {"id": "orgao_oficial", "titulo": "Se passa por órgão oficial ou empresa grande", "explica": "Usar nome de governo, Receita, Detran, Correios ou banco para dar credibilidade é tática de golpe.", "peso": 4, "sinais": ["\\b(receita federal|detran|correios|gov\\.br|governo federal|inss|caixa econ[ôo]mica)\\b"]}, {"id": "sorteio_premio", "titulo": "Sorteio, prêmio ou brinde que exige pagamento", "explica": "\"Você ganhou\" seguido de pedido de pagamento ou dados é golpe.", "peso": 3, "sinais": ["\\bsorteio\\b", "voc[êe] (foi sorteado|ganhou)", "\\bpr[êe]mio\\b"]}, {"id": "urgencia", "titulo": "Pressão por urgência", "explica": "\"Só hoje\", \"últimas vagas\" e \"corre\" servem para a pessoa não pensar antes de pagar.", "peso": 2, "sinais": ["s[óo] hoje", "[úu]ltimas? (unidades|vagas)", "promo[çc][ãa]o rel[âa]mpago", "garanta j[áa]", "\\bcorre\\b"]}, {"id": "eletronico_barato", "titulo": "Eletrônico caro por preço muito baixo", "explica": "Celular, videogame ou notebook muito abaixo do mercado é a isca mais comum de golpe de venda.", "peso": 5, "sinais": ["\\b(iphone|playstation|ps5|xbox|notebook|macbook|galaxy s\\d+|smart ?tv)\\b"]}, {"id": "ilegal", "titulo": "Produto ou serviço que não pode ser vendido", "explica": "Remédio sem receita, anabolizante, apostas e armas não podem ser oferecidos.", "peso": 6, "sinais": ["sem receita", "anabolizante", "rem[ée]dio (para|pra) emagrecer", "\\b(bet|apostas?)\\b", "\\barma(s)?\\b", "\\bmuni[çc][ãa]o\\b"]}, {"id": "garantia_impossivel", "titulo": "Promessa impossível", "explica": "\"Resultado garantido\", \"cura\" ou \"100% garantido\" costumam esconder enganação.", "peso": 2, "sinais": ["100 ?% garantid", "resultado garantido", "\\bcura\\b"]}, {"id": "sinal_encomenda", "titulo": "Sinal em encomenda", "explica": "Sinal pode ser normal em encomendas. Mesmo assim: valor combinado por escrito, comprovante e Pix no nome do comerciante.", "peso": 1, "sinais": ["\\bsinal\\b", "\\bentrada de\\b", "\\b50 ?%\\s*(antes|adiantad|na encomenda)"]}], "precoTipico": {"eletricista": 80, "encanador": 80, "marmita": 18, "bolos": 12, "beleza": 25, "costura": 15, "limpeza": 120, "bazar": 10, "artesanato": 15, "pet": 30, "aulas": 40, "reparos": 60, "outros": 20}, "dicas": {"casa": "Combine o preço antes e prefira pagar só depois do serviço feito. Desconfie de quem pede o valor todo adiantado.", "encomenda": "Em encomendas, um sinal pode ser normal: combine o valor por escrito, peça comprovante e confira se o Pix vai para o nome do comerciante.", "bazar": "Prefira ver a peça antes de pagar e combine a retirada num lugar movimentado.", "aulas": "Combine uma aula experimental e evite pagar pacotes longos de uma vez.", "geral": "O Vitrine nunca pede senha, código de verificação ou dados do cartão. Desconfie de quem pedir."}, "tipoDica": {"eletricista": "casa", "encanador": "casa", "reparos": "casa", "limpeza": "casa", "beleza": "casa", "pet": "casa", "bolos": "encomenda", "marmita": "encomenda", "artesanato": "encomenda", "costura": "encomenda", "bazar": "bazar", "aulas": "aulas", "outros": "geral"}};
+/* ---------- Checagem de segurança (base de golpes + IA) ----------
+   Regras: os padrões da base GOLPES (a mesma do servidor) e o preço típico do bairro.
+   IA: no pedido ao Sonnet vão os padrões mais parecidos com a frase (a "recuperação" do RAG);
+   ela devolve os padrões que viu, com o trecho. Só vale o que ainda estiver no texto. */
+const GOLPES_RX=GOLPES.padroes.map(p=>({...p,rx:p.sinais.map(x=>new RegExp(x,"i"))}));
+function trechoInteiro(t,m){let a=m.index,b=m.index+m[0].length;const L=/[\p{L}\p{N}%]/u;while(a>0&&L.test(t[a-1]))a--;while(b<t.length&&L.test(t[b]))b++;return t.slice(a,b).trim()}
+function riscoDe(v){
+  const itens=v.itens||[];
+  const texto=[v.nome,v.desc,...itens.map(i=>i.nome),v.textoLido].filter(Boolean).join(" \n ");
+  const motivos=[];let pontos=0;
+  for(const p of GOLPES_RX){const m=p.rx.map(r=>texto.match(r)).find(Boolean);if(m){motivos.push({id:p.id,titulo:p.titulo,explica:p.explica,trecho:trechoInteiro(texto,m),peso:p.peso});pontos+=p.peso}}
+  const tipico=GOLPES.precoTipico[v.cat]||GOLPES.precoTipico.outros;
+  const precos=itens.map(i=>+i.preco).filter(n=>n>0),menor=precos.length?Math.min(...precos):0;
+  if(menor&&menor<tipico*.3){motivos.push({id:"preco_bom_demais",titulo:"Preço muito abaixo do bairro",explica:`O menor preço (${brl(menor)}) está bem abaixo do comum para esta categoria no bairro (a partir de ${brl(tipico)}). Preço bom demais é a isca mais usada em golpes.`,trecho:brl(menor),peso:3});pontos+=3}
+  const ele=motivos.find(m=>m.id==="eletronico_barato");
+  if(ele&&!(menor&&menor<1000)){pontos-=ele.peso;motivos.splice(motivos.indexOf(ele),1)}
+  // o que a IA apontou e ainda está no texto
+  const baixo=texto.toLowerCase();
+  for(const m of (v.riscoIA||[])){
+    if(motivos.find(x=>x.id===m.id))continue;
+    const p=GOLPES.padroes.find(x=>x.id===m.id);
+    if(p&&m.trecho&&baixo.includes(m.trecho.toLowerCase())){motivos.push({id:p.id,titulo:p.titulo,explica:p.explica,trecho:m.trecho,peso:p.peso,ia:true});pontos+=p.peso}
+  }
+  return {nivel:pontos>=6?"alto":pontos>=3?"medio":"baixo",pontos,motivos};
+}
+function atualizarRisco(){
+  const el=$("#risco-painel");if(!el||!rascunho)return;
+  const r=riscoDe(rascunho),btn=$("#btn-publicar");
+  const total=GOLPES.padroes.length;
+  if(r.nivel==="baixo"){
+    el.className="risco ok";
+    el.innerHTML=`<b>Checagem de segurança</b><span>Nenhum sinal de golpe encontrado. Comparamos com ${total} padrões de golpe da base do Vitrine e com os preços do bairro.</span>${r.motivos.length?`<small>${r.motivos.map(m=>esc(m.explica)).join(" ")}</small>`:""}`;
+    btn.textContent="Publicar no mapa";
+  }else{
+    el.className="risco "+r.nivel;
+    el.innerHTML=`<b>${r.nivel==="alto"?"Esta vitrine vai para análise antes de entrar no mapa":"Atenção: confira antes de publicar"}</b>
+      <ul class="risco-lista">${r.motivos.filter(m=>m.peso>1||r.nivel!=="baixo").map(m=>`<li><b>${esc(m.titulo)}</b>${m.trecho?` <q>${esc(m.trecho)}</q>`:""}${m.ia?` <span class="risco-ia">apontado pela IA</span>`:""}<small>${esc(m.explica)}</small></li>`).join("")}</ul>
+      <small>${r.nivel==="alto"?"Se foi engano, ajuste o texto acima: a checagem é refeita na hora.":"Você pode publicar, mas vale ajustar o texto se não for isso."}</small>`;
+    btn.textContent=r.nivel==="alto"?"Enviar para análise":"Publicar no mapa";
+  }
+}
+
+/* Dica de segurança no contato (escolhida pelo tipo de negócio) */
+function dicaSeguranca(v){return GOLPES.dicas[GOLPES.tipoDica[v.cat]||"geral"]}
+
+
+/* ---------- Foto de capa ----------
+   Foto de papel/cardápio serve para a IA ler, mas não fica bonita como capa.
+   Ordem: o que a IA disse de cada foto → senão, o celular detecta "papel" (muito branco sem cor) → o comerciante escolhe. */
+const NOME_TIPO_FOTO={texto:"papel com texto",produto:"produto",servico:"serviço",fachada:"fachada",outro:"foto"};
+function ehFotoDePapel(src){
+  return new Promise(ok=>{
+    const img=new Image();
+    img.onload=()=>{try{
+      const c=document.createElement("canvas"),W=48,H=48;c.width=W;c.height=H;const x=c.getContext("2d");x.drawImage(img,0,0,W,H);
+      const d=x.getImageData(0,0,W,H).data;let claro=0,escuro=0;
+      for(let i=0;i<d.length;i+=4){const r=d[i],g=d[i+1],b=d[i+2],mx=Math.max(r,g,b),mn=Math.min(r,g,b),sat=mx?(mx-mn)/mx:0;
+        if(mx>165&&sat<.18)claro++;else if(mx<90)escuro++}
+      const n=W*H;ok(claro/n>.55&&escuro/n<.25);
+    }catch(e){ok(false)}};
+    img.onerror=()=>ok(false);img.src=src;
+  });
+}
+function tiposDasFotos(fotosIA,papeis){
+  return fotos.map((f,i)=>{const ia=(fotosIA||[]).find(x=>x.i===i);if(ia&&NOME_TIPO_FOTO[ia.tipo])return {tipo:ia.tipo,fonte:"ia"};return {tipo:papeis&&papeis[i]?"texto":"outro",fonte:"celular"}});
+}
+function escolherCapa(tipos){
+  const pref=["produto","servico","fachada","outro"];
+  for(const t of pref){const i=(tipos||[]).findIndex(x=>x.tipo===t);if(i>=0)return fotos[i]}
+  return null; // só papel → arte do Vitrine
+}
+function renderCapaOps(){
+  const campo=$("#capa-campo"),el=$("#capa-ops");if(!campo||!rascunho)return;
+  campo.hidden=!fotos.length;if(!fotos.length)return;
+  const tipos=rascunho.fotosTipo||[];
+  el.innerHTML=fotos.map((f,i)=>`<button type="button" class="capa-op${rascunho.foto===f?" on":""}" role="radio" aria-checked="${rascunho.foto===f}" data-capa="${i}"><span class="capa-mini" style="background-image:url('${f}')"></span><small>${esc(NOME_TIPO_FOTO[(tipos[i]||{}).tipo]||"foto")}</small></button>`).join("")
+    +`<button type="button" class="capa-op${rascunho.foto?"":" on"}" role="radio" aria-checked="${!rascunho.foto}" data-capa="arte"><span class="capa capa-mini p${CATS[rascunho.cat].p}"></span><small>arte do Vitrine</small></button>`;
+  const soPapel=tipos.length&&tipos.every(t=>t.tipo==="texto");
+  $("#capa-dica").textContent=soPapel?"Como a foto é de um papel com texto, usamos a arte do Vitrine na capa. A IA continua lendo os preços dela.":"A foto de papel ou cardápio serve para a IA ler os preços. Para a capa, escolha uma foto do produto ou do serviço.";
+}
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-capa]");if(!b||!rascunho)return;
+  rascunho.foto=b.dataset.capa==="arte"?null:fotos[+b.dataset.capa]||null;
+  renderCapaOps();atualizarPrevia();
+});
+
 iniciarLogin();
 
 if(COM_SERVIDOR){
@@ -2126,12 +2553,13 @@ function promptIA(frase,nome,nImgs){
   return `Você é a IA do Vitrine, um app que monta a página de comerciantes e autônomos de bairro no Brasil.
 A partir ${nImgs?"das fotos anexadas e ":""}da frase do comerciante, monte a página.${nImgs?"\nPrimeiro leia com atenção todo texto visível nas fotos (etiquetas, cardápio, placa, papel colado, letra à mão), depois entenda o que a foto mostra.":""}
 Responda APENAS com um objeto JSON válido, sem nenhum texto antes ou depois, exatamente neste formato:
-{"texto_lido": "todo o texto que aparece nas fotos, copiado como está (ou vazio se não houver)", "nome": "nome curto do negócio", "categoria": "uma destas chaves: ${Object.keys(CATS).join(", ")}", "descricao": "1 ou 2 frases simples e calorosas, até 180 caracteres", "itens": [{"nome": "produto ou serviço", "preco": 80, "origem": "foto | frase | estimado"}], "atende_hoje": true, "titulo_story": "chamada curta para story, até 30 caracteres", "sub_story": "complemento, até 50 caracteres", "perguntas_agendamento": ["2 ou 3 perguntas curtas que o comerciante faria a um cliente antes de agendar"]}
+{"texto_lido": "todo o texto que aparece nas fotos, copiado como está (ou vazio se não houver)", "nome": "nome curto do negócio", "categoria": "uma destas chaves: ${Object.keys(CATS).join(", ")}", "descricao": "1 ou 2 frases simples e calorosas, até 180 caracteres", "itens": [{"nome": "produto ou serviço", "preco": 80, "origem": "foto | frase | estimado"}], "atende_hoje": true, "titulo_story": "chamada curta para story, até 30 caracteres", "sub_story": "complemento, até 50 caracteres", "perguntas_agendamento": ["2 ou 3 perguntas curtas que o comerciante faria a um cliente antes de agendar"], "fotos": [{"indice": 0, "tipo": "texto | produto | servico | fachada | outro"}]}
 Regras:
 - Português do Brasil, tom simples e próximo, como se fosse um vizinho falando.
 - Se o comerciante informou um nome, use-o no nome do negócio (ex.: "Zé" + elétrica = "Zé Elétrica"). Se não informou, crie um nome simpático e curto.
 - De 3 a 5 itens no catálogo, com preços "a partir de" em reais, coerentes com o que aparece na frase e nas fotos. Se a frase der um preço, respeite-o. Se a foto mostrar um preço, use exatamente o da foto.
 - "origem" de cada item: "foto" se o preço foi lido nas fotos, "frase" se veio da frase, "estimado" se você estimou.
+- "fotos": uma entrada por foto anexada, na ordem (índice 0 é a primeira). "texto" = papel, cardápio, lousa, placa ou panfleto cujo conteúdo é principalmente escrito; "produto" = o que é vendido; "servico" = serviço feito ou em andamento; "fachada" = frente do negócio. Sem fotos, use [].
 - "perguntas_agendamento": perguntas que ajudam o comerciante a se preparar (ex.: eletricista: "O que precisa ser feito?"; bolos: "Pra quantas pessoas?"). Não pergunte serviço, dia, horário nem nome: isso já é perguntado.
 - "atende_hoje" é true só se a frase indicar atendimento no mesmo dia ou todos os dias.
 - Não invente telefone, endereço nem avaliações.
@@ -2160,7 +2588,9 @@ function normalizarIA(r,frase,nome){
   return {cat,nome:(String(r.nome||"").trim().slice(0,40))||base.nome,desc:(String(r.descricao||"").trim().slice(0,240))||base.desc,itens,
     hoje:typeof r.atende_hoje==="boolean"?r.atende_hoje:base.hoje,regiao:"Santa Adélia e região",
     storyTit:String(r.titulo_story||"").trim().slice(0,40)||null,storySub:String(r.sub_story||"").trim().slice(0,60)||null,textoLido:String(r.texto_lido||"").trim().slice(0,400),
-    perguntas:(Array.isArray(r.perguntas_agendamento)?r.perguntas_agendamento:[]).map(p=>String(p||"").trim().slice(0,90)).filter(Boolean).slice(0,3)};
+    perguntas:(Array.isArray(r.perguntas_agendamento)?r.perguntas_agendamento:[]).map(p=>String(p||"").trim().slice(0,90)).filter(Boolean).slice(0,3),
+    fotosIA:(Array.isArray(r.fotos)?r.fotos:[]).map(f=>({i:Number(f&&f.indice),tipo:String(f&&f.tipo||"")})).filter(f=>Number.isInteger(f.i)&&f.i>=0&&f.i<3),
+    riscoIA:(r.risco&&Array.isArray(r.risco.motivos)?r.risco.motivos:[]).map(m=>({id:String(m&&m.padrao||""),trecho:String(m&&m.trecho||"").slice(0,120)})).filter(m=>m.id&&m.trecho).slice(0,5)};
 }
 const MOTIVOS={
   "sem-ia":"Modo demonstração: aqui o texto sai de modelos prontos a partir da sua frase. Com a IA ligada, o Claude Sonnet lê o texto da foto e escreve tudo.","erro":"Não deu para falar com a IA agora, então a vitrine foi montada no modo demonstração.",
@@ -2180,12 +2610,14 @@ async function novaCriacao(){
   const tick=setInterval(()=>{crono.textContent=((performance.now()-t0)/1000).toFixed(1).replace(".",",")+" s"},100);
   const tempos=[0,900,1900,2900];
   const timers=lis.map((l,i)=>setTimeout(()=>{if(i>0)lis[i-1].className="feito";l.className="ativo"},tempos[i]));
-  const [res]=await Promise.all([gerarComIA(frase,nome),new Promise(r=>setTimeout(r,3400))]);
+  const [res,papeis]=await Promise.all([gerarComIA(frase,nome),Promise.all(fotos.map(ehFotoDePapel)),new Promise(r=>setTimeout(r,3400))]);
   timers.forEach(clearTimeout);lis.forEach(l=>l.className="feito");clearInterval(tick);
   if(res.motivo==="moderacao"){mostrarEtapa(etF);$("#criar-erro").textContent="A IA não aceitou essa foto ou frase"+(res.msg?": "+res.msg:"")+". Tente outra.";return}
   const g=res.ok?normalizarIA(res.dados,frase,nome):gerarVitrine(frase,nome);
-  rascunho={id:"v"+Date.now().toString(36),...g,x:pos.x,y:pos.y,zap:$("#zap").value.trim(),foto:fotos[0]||null,nota:null,viz:0,exemplo:false,criadaEm:Date.now()};
+  rascunho={id:"v"+Date.now().toString(36),...g,frase,x:pos.x,y:pos.y,zap:$("#zap").value.trim(),foto:null,nota:null,viz:0,exemplo:false,criadaEm:Date.now()};
   if(!rascunho.storyTit)rascunho.storyTit=tituloStory(rascunho);
+  rascunho.fotosTipo=tiposDasFotos(g.fotosIA,papeis);
+  rascunho.foto=escolherCapa(rascunho.fotosTipo);
   const selo=$("#ia-selo"),aviso=$("#aviso-ia");
   {const tl=(rascunho.textoLido||"").trim();$("#texto-lido").hidden=!tl;$("#texto-lido-q").textContent=tl}
   if(res.ok){selo.className="ia-selo real";selo.textContent="Lido pelo Claude Sonnet";aviso.textContent="A IA leu "+(fotos.length?"suas fotos e ":"")+"sua frase e montou a vitrine. Confira os preços marcados como estimados antes de publicar."}
@@ -2196,7 +2628,8 @@ async function novaCriacao(){
 /* avaliação depois da conversa */
 const chamarZapBase=chamarZap;
 chamarZap=function(id){
-  chamarZapBase(id);
+  chamarZapBase(id);marcarContato(id);
+  {const v0=porId(id),g0=document.querySelector("#sheet-corpo .sheet-grid");if(v0&&g0)g0.insertAdjacentHTML("beforeend",`<p class="dica-seg"><b>Dica de segurança</b>${esc(dicaSeguranca(v0))} ${esc(GOLPES.dicas.geral)}</p>`)}
   const v=porId(id),grid=document.querySelector("#sheet-corpo .sheet-grid");if(!v||!grid)return;
   const pn=v.nome.split(/[\s&]/)[0];
   grid.insertAdjacentHTML("beforeend",`<div class="avaliar" id="avaliar"><b>Depois da conversa: como foi com ${esc(pn)}?</b>
@@ -2205,11 +2638,12 @@ chamarZap=function(id){
     <button type="button" class="btn btn-azul" id="avaliar-enviar" disabled>Enviar avaliação</button></div>`);
   let nota=0;const box=$("#avaliar");
   box.querySelectorAll("[data-n]").forEach(b=>b.addEventListener("click",()=>{nota=+b.dataset.n;box.querySelectorAll("[data-n]").forEach(x=>{const on=+x.dataset.n<=nota;x.classList.toggle("on",on);x.setAttribute("aria-checked",+x.dataset.n===nota)});$("#avaliar-enviar").disabled=false}));
-  $("#avaliar-enviar").addEventListener("click",()=>{
-    if(!nota)return;
-    const total=(v.nota||0)*(v.viz||0)+nota;v.viz=(v.viz||0)+1;v.nota=Math.round(total/v.viz*10)/10;
+  $("#avaliar-enviar").addEventListener("click",async()=>{
+    if(!nota)return;$("#avaliar-enviar").disabled=true;
+    const r=await enviarAvaliacao(v,nota,$("#avaliar-txt").value,"");
+    if(!r.ok){box.insertAdjacentHTML("beforeend",`<p class="dica erro-ouv">${esc(r.erro)}</p>`);return}
     box.innerHTML=`<div class="avaliado">✓ Avaliação enviada. Agora ${esc(v.nome)} tem nota ${v.nota.toFixed(1).replace(".",",")} com ${v.viz} vizinho${v.viz>1?"s":""}.</div>`;
-    renderMapas();renderResultados();toast("Obrigado! Sua avaliação ajuda os vizinhos a escolher.");
+    toast("Obrigado! Sua avaliação ajuda os vizinhos a escolher.");
   });
 };
 

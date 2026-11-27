@@ -12,6 +12,10 @@ vitrine-site/
     ├── apagar.js          ← tira uma vitrine do mapa (moderação com senha, ou o próprio dono logado)
     ├── config.js          ← entrega ao navegador os dados públicos (login com Google e número do estande)
     ├── minhas.js          ← "Minhas vitrines" de quem entrou com o Google
+    ├── denunciar.js       ← recebe denúncias de vitrines e mensagens da Ouvidoria (com protocolo)
+    ├── ouvidoria.js       ← painel do grupo: listar, resolver, arquivar e devolver vitrine ao mapa
+    ├── avaliacoes.js      ← avaliações dos vizinhos (ler e enviar; 1 por pessoa por vitrine)
+    ├── _golpes.js         ← base de padrões de golpe (checagem de risco e IA)
     └── _supabase.js       ← peças comuns (não vira endereço)
 ```
 
@@ -58,6 +62,37 @@ Nunca coloque essas chaves no GitHub, no `index.html` ou no grupo do WhatsApp.
 - A moderação não apaga do banco: marca a vitrine como `oculta`. Para voltar, mude `oculta` para `false` no **Table Editor** do Supabase.
 - O Supabase grátis **pausa após 7 dias sem uso**: abra o site na véspera e no dia da feira.
 - Defina um **teto de gasto** na Anthropic. Cada vitrine com IA custa ~US$ 0,02.
+
+## Checagem contra golpes (IA + base de padrões)
+
+Não precisa de configuração nova.
+
+- **Base de padrões:** 15 padrões de golpe (pagamento integral adiantado, chave Pix/CPF na vitrine, link externo, outro canal, pedido de senha ou código, dinheiro fácil, empréstimo, taxa antecipada, órgão oficial, sorteio, urgência, eletrônico barato, ilegal, promessa impossível, sinal em encomenda) + preço típico por categoria. Fica em `api/_golpes.js` e, igual, na constante `GOLPES` do `index.html`: ao mudar um, mude o outro.
+- **Na revisão da vitrine:** o painel **"Checagem de segurança"** mostra o resultado (verde, atenção ou análise), com o motivo e o trecho. Editar o texto refaz a checagem na hora.
+- **Com a IA:** os padrões mais parecidos com a frase vão junto no pedido ao Sonnet (a "recuperação" do RAG). Ela devolve os padrões que reconheceu, com o trecho, inclusive casos que as regras não pegam ("só no zap do meu primo"). Esses aparecem como "apontado pela IA".
+- **Risco alto:** a vitrine **não entra no mapa**. O servidor refaz a checagem (não confia no navegador), grava a vitrine como oculta e abre uma manifestação na fila do grupo, com protocolo. O grupo decide em **Telão → Moderar vitrines → Denúncias e ouvidoria** (botão **Devolver ao mapa**).
+- **Dica de segurança:** no agendamento e no "Chamar no WhatsApp", conforme o tipo de negócio (serviço em casa, encomenda, bazar, aulas).
+
+## Avaliações dos vizinhos
+
+**Ligar (uma vez):** no **SQL Editor** do Supabase, rode o **bloco 6** do `supabase.sql` (tabela `avaliacoes`).
+
+- Cada vitrine aberta tem a área **"Avaliações dos vizinhos"**: nota média, total, barras de 5 a 1 estrela, as avaliações mais recentes e o formulário para avaliar.
+- Na lista do mapa, a nota ("★ 4,9 · 23 vizinhos") é um atalho direto para essa área.
+- Uma avaliação por pessoa por vitrine (o servidor guarda só o resumo do IP). Quem chamou no WhatsApp ou agendou pelo app ganha o selo **"✓ contato pelo app"**. No protótipo esse selo é marcado pelo próprio navegador, não é uma prova.
+- Vitrines de exemplo mostram avaliações fictícias, sinalizadas na tela.
+
+## Denúncias e Ouvidoria
+
+**Ligar (uma vez):** no Supabase, **SQL Editor**, rode o **bloco 5** do `supabase.sql` (tabela `manifestacoes`). Não precisa de variável nova: usa a `MODERACAO_SENHA`.
+
+**Como funciona:**
+- Cada vitrine tem o link **"Denunciar esta vitrine"**, com 6 motivos (golpe, impróprio, enganoso, ilegal, dados de terceiros, outro), texto e contato opcionais.
+- **Ouvidoria** (rodapé, seção de confiança e FAQ): reclamação, sugestão, elogio, pedido sobre dados pessoais (LGPD) ou denúncia geral.
+- Toda mensagem recebe um **protocolo** (`VT-AAMMDD-XXXXX`).
+- **3 denúncias abertas de pessoas diferentes** tiram a vitrine do mapa sozinhas. O IP nunca é guardado: só um resumo (hash) para contar pessoas diferentes.
+- **Moderação:** no **Telão → Moderar vitrines**, digite a senha e clique em **Carregar** (Denúncias e ouvidoria). Dá para marcar como **Resolvida**, **Arquivar**, **Reabrir** e **Devolver ao mapa** (devolve a vitrine e arquiva as denúncias dela).
+- Sem o banco, o site mostra o protocolo como demonstração e a mensagem fica só no navegador.
 
 ## Login com Google (opcional)
 

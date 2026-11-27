@@ -9,7 +9,7 @@
 | **Disciplina** | ESMA002-23 · Inovações para Engenharia |
 | **Evento** | Feira EI2026, apresentação em estande, **9 de dezembro (quarta)** |
 | **Fase atual** | Protótipo navegável (PC e navegador do celular) com IA de verdade pelo servidor |
-| **Última atualização** | 24/11/2026 (v3.6) |
+| **Última atualização** | 27/11/2026 (v3.10) |
 | **Site no ar** | https://vitrine-ufabc-ieng.vercel.app/ |
 | **Fontes** | Resumo final do projeto (PDF "Projeto IENG · Vitrine e Marketplace") + vídeo-pitch final (2 min) + decisões tomadas na construção do protótipo |
 
@@ -97,6 +97,40 @@ Ideia do grupo (24/11): um agente de agendamento para os clientes, que faz as pe
 
 **Depois da feira (se o projeto seguir):** chatbot rodando dentro do próprio WhatsApp (API oficial do WhatsApp Business), com agenda de horários livres do comerciante e confirmação automática.
 
+### 5.2 Avaliações dos vizinhos
+Cada vitrine tem a área **"Avaliações dos vizinhos"**: nota média, total, distribuição de 5 a 1 estrela, avaliações recentes (nome, data, texto) e o formulário para avaliar. A nota na lista do mapa leva direto até ela. Regras: 1 avaliação por pessoa por vitrine; selo **"✓ contato pelo app"** para quem chamou ou agendou pelo Vitrine; avaliações gravadas no banco (tabela `avaliacoes`) e somadas na nota do mapa de todo mundo. Nas vitrines de exemplo, as avaliações são fictícias e sinalizadas.
+
+### 5.3 Checagem contra golpes (IA + RAG)
+**Base de conhecimento:** 15 padrões de golpe com explicação e peso, mais o preço típico por categoria no bairro.
+
+**Ao publicar:**
+1. Regras comparam nome, descrição, itens e o texto lido na foto com a base.
+2. A IA recebe junto com a foto os padrões mais parecidos com a frase (recuperação) e aponta os que reconhece, citando o trecho (geração aumentada).
+3. Resultado: **ok** (publica), **atenção** (publica, com aviso ao comerciante) ou **análise** (não entra no mapa; vai para a fila do grupo, com protocolo). O servidor refaz a checagem por regras.
+
+**No contato:** dica de segurança conforme o tipo de negócio, no agendamento e no "Chamar no WhatsApp".
+
+**Demonstração para a banca:** criar uma vitrine com "troca de chuveiro por R$ 15, pagamento 100% adiantado no Pix, chave 123.456.789-00". A checagem mostra os três motivos e manda para análise.
+
+**Depois da feira:** base em pgvector com casos reais e denúncias procedentes, detecção de vitrine clonada (CLIP), avaliações suspeitas, resumo das avaliações com citação, triagem da Ouvidoria com casos parecidos e selo MEI verificado.
+
+### 5.4 Denúncias e Ouvidoria
+Num marketplace aberto, qualquer pessoa publica. Por isso o Vitrine tem dois canais, ambos com **número de protocolo** (`VT-AAMMDD-XXXXX`):
+
+| Canal | Onde fica | Para quê |
+|---|---|---|
+| **Denunciar esta vitrine** | Link em cada vitrine | Golpe ou fraude · conteúdo impróprio · informação enganosa · produto ou serviço ilegal · dados ou foto de outra pessoa · outro |
+| **Ouvidoria** | Rodapé, seção "Confiança em cada pino" e FAQ | Reclamação · sugestão · elogio · pedido sobre dados pessoais (LGPD) · denúncia geral |
+
+**Regras:**
+- A denúncia é **anônima para o comerciante**; o contato é opcional (só para retorno).
+- **3 denúncias abertas de pessoas diferentes** tiram a vitrine do mapa automaticamente até a análise da equipe. O servidor guarda só um resumo (hash) do IP, nunca o IP, para contar pessoas diferentes.
+- O grupo modera no **Telão → Moderar vitrines** (senha `MODERACAO_SENHA`): marcar como resolvida, arquivar, reabrir ou **devolver a vitrine ao mapa**.
+- Pedidos sobre dados pessoais: resposta prometida em até 15 dias.
+- Em caso de crime ou perigo imediato, o site orienta procurar também a polícia (190).
+
+**Para a banca:** "Confiança se constrói dos dois lados: avaliação dos vizinhos para quem faz bem, e denúncia com protocolo para quem age mal. Três denúncias tiram a vitrine do mapa na hora."
+
 ---
 
 ## 6. Identidade visual
@@ -157,10 +191,10 @@ Um site que funciona no PC e no navegador do celular, sem app.
 | 6 | **Antes e depois** | "Do papel no poste à tela do celular": o bilhete da Tê × a vitrine dela |
 | 7 | **Como funciona** | Celular fixo que troca de tela com a rolagem, nos passos do pitch: Comerciante 1/3 Fotografa · 2/3 A IA monta a vitrine e o marketing · 3/3 Aparece no mapa · Morador: busca, encontra e chama no WhatsApp |
 | 8 | **Planos** | "Grátis pra encher o mapa. Pro e Premium pra quem quer crescer." Ticket com seletor **Básico / Pro / Premium** (R$ 0, R$ 14,90 e R$ 49,90) |
-| 9 | **Confiança em cada pino** | Avaliações de vizinhos · Fotos de verdade · Endereço protegido · Conversa direta |
+| 9 | **Confiança em cada pino** | Avaliações de vizinhos · Fotos de verdade · Endereço protegido · Conversa direta · faixa "Viu algo errado?" com o botão da Ouvidoria |
 | 10 | **Quem já usou** | Três falas **fictícias, marcadas como fictícias** (Tê, Zé e Lu), até chegarem as falas das entrevistas |
 | 11 | **Demonstração no estande** *(novo)* | Faixa turquesa "Teste o app Vitrine na feira, em um minuto" com os 4 passos e os botões "Começar pela foto" e "Abrir o telão" |
-| 12 | **Perguntas frequentes** | O que é · Precisa baixar app? · Quanto custa (três planos) · Dá pra agendar? · Como a IA monta · Endereço no mapa · Contato · Onde começa (Santo André) · Quem pode criar |
+| 12 | **Perguntas frequentes** | O que é · Precisa baixar app? · Quanto custa (três planos) · Dá pra agendar? · Como denunciar / Ouvidoria · Como a IA monta · Endereço no mapa · Contato · Onde começa (Santo André) · Quem pode criar |
 | 13 | **Chamada final e rodapé** | QR code "Abra no seu celular", "Compartilhar", links |
 
 **Removido na v3:** as quatro cartas que viravam ("Como funciona" antigo), porque repetiam a seção do celular, e o slogan "em um só lugar" / "Da foto ao balcão", trocados pelo slogan oficial.
@@ -169,7 +203,7 @@ Um site que funciona no PC e no navegador do celular, sem app.
 
 | Tela | O que tem |
 |---|---|
-| **Criar minha vitrine** (`#criar`) | Até 3 fotos (câmera ou galeria), frase ou áudio (simulado), nome, WhatsApp e área de atendimento no mapa. Geração animada com cronômetro. Resultado: vitrine, story, post e ajustes; quadro **"Lido na foto"**; **perguntas do agendamento** criadas pela IA e editáveis; cada preço marcado como "lido na foto", "da sua frase" ou "estimado · confira"; selo "Lido pelo Claude Sonnet" ou "Modo demonstração" |
+| **Criar minha vitrine** (`#criar`) | Até 3 fotos (câmera ou galeria), frase ou áudio (simulado), nome, WhatsApp e área de atendimento no mapa. Geração animada com cronômetro. Resultado: vitrine, story, post e ajustes; quadro **"Lido na foto"**; **perguntas do agendamento** criadas pela IA e editáveis; **foto de capa** escolhida automaticamente (a IA diz o que é cada foto; foto de papel ou cardápio não vira capa, vira a arte do Vitrine) e trocável pelo comerciante; cada preço marcado como "lido na foto", "da sua frase" ou "estimado · confira"; selo "Lido pelo Claude Sonnet" ou "Modo demonstração" |
 | **Mapa do bairro** (`#mapa`) | Busca ("eletricista hoje", "presente até R$ 50"), resultados por distância com nota, vizinhos que avaliaram e "atende hoje"; vitrine completa; WhatsApp; **Agendar horário** (assistente, seção 5.1); avaliação com estrelas |
 | **Telão** (`#telao`) | Mapa para projetor, contador "vitrines no mapa do bairro", QR code com link editável, últimas vitrines, tela cheia e **Moderar vitrines** (com senha do grupo, tira uma vitrine do mapa) |
 | **Painel Pro** (`#painel`) | Dados de exemplo do Zé Elétrica: visitas na vitrine, cliques no WhatsApp, posts gerados |

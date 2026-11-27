@@ -47,6 +47,10 @@ Projeto da disciplina **ESMA002-23 · Inovações para Engenharia** da **UFABC**
 | Pagamento | Ainda não existe |
 
 ## Versões
+- **v3.10 (27/11/2026):** foto de papel/cardápio não vira mais capa: a IA (ou o celular) identifica o tipo de cada foto e o comerciante escolhe a capa na revisão.
+- **v3.9 (27/11/2026):** checagem contra golpes ao publicar (base de 15 padrões + IA), vitrine suspeita vai para análise com protocolo, dicas de segurança no contato.
+- **v3.8 (27/11/2026):** área "Avaliações dos vizinhos" em cada vitrine (média, distribuição, lista e formulário), gravada no banco, com selo de contato pelo app.
+- **v3.7 (27/11/2026):** denúncias de vitrines e Ouvidoria, com protocolo; 3 denúncias tiram a vitrine do mapa; moderação pelo telão.
 - **v3.6 (24/11/2026):** vitrines sem WhatsApp (e exemplos, sem número do estande) fazem o agendamento com simulação marcada, mostrando a mensagem como chegaria ao comerciante.
 - **v3.5 (24/11/2026):** com `WHATSAPP_ESTANDE`, pedidos de demonstração chegam de verdade no celular do estande; vitrine sem WhatsApp não simula mais resposta.
 - **v3.4 (24/11/2026):** login com Google opcional (Supabase Auth), "Minhas vitrines" e o dono pode tirar a própria vitrine do mapa.
